@@ -1,5 +1,1 @@
-HEAD
 4936663 Rick Buijvoets
-=======
-Rick Buijvoets
-ff976aa42de1bb8734095e1d777e82b5ecbd14d3
