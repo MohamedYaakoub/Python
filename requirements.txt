@@ -5,3 +5,5 @@ pytest-cov
 decorators
 mock
 eel
+pandas
+numpy
