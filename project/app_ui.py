@@ -2,9 +2,11 @@
 User Interface
 """
 
-
+import eel
 def main():
-    pass
+    eel.init('front_end')
+    eel.start('main.html')
+
 
 
 if __name__ == "__main__":
