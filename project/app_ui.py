@@ -20,18 +20,19 @@ class JobRequests:
         self.available = self.df[self.df['status'] == "available"]
 
 
-def main():
-    eel.init('front_end')
-
+@eel.expose
+def write_jobs():
+    eel.sleep(0.5)
     jobs = JobRequests("simulation/job_requests.csv")
     for index, row in jobs.available.iterrows():
-        eel.post_job(row['company'],row['title'],row['description'],row['id'])
+        eel.post_job(row['company'], row['title'], row['description'], row['id'])
 
 
-    eel.start('main.html', size=(800, 1200) )
-
+def main():
+    eel.init('front_end')
+    write_jobs()
+    eel.start('main.html', size=(800, 1200))
 
 
 if __name__ == "__main__":
     main()
-
