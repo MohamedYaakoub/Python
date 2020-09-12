@@ -16,8 +16,8 @@ class JobRequests:
         df (str): This is where the data from the csv file is stored """
 
     def __init__(self, file):
-        self.df = pd.read_csv(file)
-        self.available = self.df[self.df['status'] == "available"]
+        self.job_offers = pd.read_csv(file)
+        self.available = self.job_offers[self.job_offers['status'] == "available"]
 
 
 @eel.expose
