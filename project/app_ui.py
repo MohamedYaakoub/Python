@@ -24,7 +24,7 @@ class JobRequests:
 def write_jobs():
     eel.sleep(0.5)
     jobs = JobRequests("simulation/job_requests.csv")
-    for index, row in jobs.available.iterrows():
+    for _ , row in jobs.available.iterrows():
         eel.post_job(row['company'], row['title'], row['description'], row['id'])
 
 
