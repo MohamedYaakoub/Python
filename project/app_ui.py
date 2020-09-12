@@ -31,11 +31,13 @@ def write_jobs():
 def log_out():
     pass
 
+
 @eel.expose
-def log_in(email,password):
-    if (email.lower()=="ui@hyre.com") and (password == '123'):
+def log_in(email, password):
+    if (email.lower() == "ui@hyre.com") and (password == '123'):
         eel.login_accepted()
     # pass
+
 
 def main():
     eel.init('front_end')
