@@ -26,13 +26,20 @@ def write_jobs():
     for _, row in jobs.available.iterrows():
         eel.post_job(row['company'], row['title'], row['description'], row['id'])
 
+
 @eel.expose
 def log_out():
     pass
 
+@eel.expose
+def log_in(email,password):
+    if (email.lower()=="ui@hyre.com") and (password == '123'):
+        eel.login_accepted()
+    # pass
+
 def main():
     eel.init('front_end')
-    eel.start('main.html', size=(800, 1200))
+    eel.start('login.html', size=(800, 1200))
 
 
 if __name__ == "__main__":

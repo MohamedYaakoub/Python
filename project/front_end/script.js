@@ -19,3 +19,16 @@ function acceptJob(id) {
     document.getElementById(divid).style.display="none";
 
 }
+
+function login() {
+    var email = document.getElementById('LoginEmail').value;
+    var password = document.getElementById('LoginPassword').value;
+    eel.log_in(email,password);
+
+}
+
+eel.expose(login_accepted);
+function login_accepted(){
+    // alert("Hi");
+    window.location.replace('/main.html');
+}
