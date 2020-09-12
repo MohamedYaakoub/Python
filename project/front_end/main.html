@@ -11,7 +11,7 @@
 
 </head>
 
-<body>
+<body onload="eel.write_jobs()">
 
 <nav class="navbar navbar-expand navbar-light bg-light">
     <a class="navbar-brand" href="#">HẎRE</a>
@@ -24,8 +24,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">My profile</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html">Log out</a>
+            <li class="nav-item mr-1">
+                <a class="nav-link" onclick="eel.log_out()" href="login.html">Log out</a>
             </li>
 
         </ul>

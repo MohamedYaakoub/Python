@@ -22,15 +22,16 @@ class JobRequests:
 
 @eel.expose
 def write_jobs():
-    eel.sleep(0.5)
     jobs = JobRequests("simulation/job_requests.csv")
     for _, row in jobs.available.iterrows():
         eel.post_job(row['company'], row['title'], row['description'], row['id'])
 
+@eel.expose
+def log_out():
+    pass
 
 def main():
     eel.init('front_end')
-    write_jobs()
     eel.start('main.html', size=(800, 1200))
 
 
