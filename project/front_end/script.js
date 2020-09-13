@@ -57,6 +57,10 @@ function login_rejected() {
     }, 4000);
 }
 
+function removeRejectAlert(){
+    $('#alert-rejected-login').removeClass("show");
+}
+
 eel.expose(login_accepted);
 
 function login_accepted() {

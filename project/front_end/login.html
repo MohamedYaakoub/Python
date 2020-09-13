@@ -41,32 +41,63 @@
     <div class="alert alert-primary alert-dismissible fade" style="background: #facb2c; color: black" role="alert"
          id="alert-rejected-login">
         <strong>Ops!</strong> You have entered an invalid username or password!
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <button type="button" class="close" onclick="removeRejectAlert()" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
 </div>
 
-<div class="container mt-4">
-    <h1>Log in</h1>
-</div>
+<div class="mt-5">
+    <div class="container mt-5">
+        <h1>Log in</h1>
+    </div>
 
-<div class="container">
-    <form onsubmit="login()">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="LoginEmail" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="LoginPassword">
-        </div>
-        <button type="submit" class="btn btn-outline-light" id="homeLogin">Enter</button>
-    </form>
-</div>
 
+    <!--<div class="container">-->
+    <!--    <form onsubmit="login()">-->
+    <!--        <div class="form-group">-->
+    <!--            <label for="exampleInputEmail1">Email address</label>-->
+    <!--            <input type="email" class="form-control" id="LoginEmail" aria-describedby="emailHelp">-->
+    <!--            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    <!--        </div>-->
+    <!--        <div class="form-group">-->
+    <!--            <label for="exampleInputPassword1">Password</label>-->
+    <!--            <input type="password" class="form-control" id="LoginPassword">-->
+    <!--        </div>-->
+    <!--        <button type="submit" class="btn btn-outline-light" id="homeLogin">Enter</button>-->
+    <!--    </form>-->
+    <!--</div>-->
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <form onsubmit="login()">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="LoginEmail" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="LoginPassword">
+                    </div>
+                    <button type="submit" class="btn btn-outline-light" id="homeLogin">Enter</button>
+                </form>
+            </div>
+            <div class="col">
+                <img class="img-responsive" src="images/letter.png" style="max-width: 100%">
+
+            </div>
+        </div>
+    </div>
 </div>
+<!--<div class="container mt-5">-->
+<!--    <div class="row">-->
+<!--        <img src="images/letter.png" style="height: 260px; margin-left: auto;margin-right: auto;display: block">-->
+<!--    </div>-->
+<!--</div>-->
 
 </body>
 </html>
