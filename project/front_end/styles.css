@@ -1,0 +1,51 @@
+.homeRegister:hover{
+    cursor: pointer;
+}
+
+
+.homeRegister:hover  .Homeunderline {
+    text-decoration: underline;
+    background: #facb2c;
+    color: black;
+}
+
+
+
+.homeRegister h2{
+    text-align: center;
+}
+
+
+
+#homeLogin:hover{
+    background: #facb2c;
+    color: black;
+}
+
+.HyreLogo{
+    color: #facb2c;
+    transition: all .2s ease-in-out;
+}
+
+.HyreLogo:hover{
+    transform: scale(1.1);
+}
+
+.color1{
+    background: #2F2FA2;
+    color: white;
+}
+
+.color2{
+    background: #F64C72 ;
+}
+
+.color3{
+    background: #242582;
+    color: white;
+}
+
+
+.color4{
+    background: #facb2c ;
+}
