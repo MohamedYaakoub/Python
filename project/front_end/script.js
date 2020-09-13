@@ -45,8 +45,6 @@ function login() {
 }
 
 eel.expose(login_accepted);
-
 function login_accepted() {
-    // alert("Hi");
     window.location.replace('/main.html');
 }
