@@ -1,5 +1,8 @@
 .homeRegister:hover{
     cursor: pointer;
+    background: #facb2c;
+    color: black;
+    border-radius: 20px;
 }
 
 
