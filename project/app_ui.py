@@ -52,12 +52,12 @@ def log_in(email, password):
         None
 
         """
-    if (email.lower() == "ui@hyre.com") and (password == '123'):
-        eel.login_accepted()
-    else:
-        eel.sleep(0.5)  # This sleep is needed to first load the page and then display the alert of Login rejected
-        eel.login_rejected()
-    # eel.login_accepted()
+    # if (email.lower() == "ui@hyre.com") and (password == '123'):
+    #     eel.login_accepted()
+    # else:
+    #     eel.sleep(0.5)  # This sleep is needed to first load the page and then display the alert of Login rejected
+    #     eel.login_rejected()
+    eel.login_accepted()
 
 
 def main():

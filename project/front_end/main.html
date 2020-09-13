@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="/eel.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -21,10 +21,10 @@
 
 </head>
 
-<body onload="eel.write_jobs()">
+<body onload="eel.write_jobs()" class="color3">
 
-<nav class="navbar navbar-expand navbar-light bg-light">
-    <a class="navbar-brand" href="#">HẎRE</a>
+<nav class="navbar navbar-expand navbar-dark color3">
+    <a class="HyreLogo navbar-brand" href="#" style="color: #facb2c">HẎRE</a>
 
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
@@ -35,7 +35,7 @@
                 <a class="nav-link" href="#">My profile</a>
             </li>
             <li class="nav-item mr-1">
-                <a class="nav-link" onclick="eel.log_out()" href="login.html">Log out</a>
+                <a class="nav-link" onclick="eel.log_out()" href="home.html">Log out</a>
             </li>
 
         </ul>
