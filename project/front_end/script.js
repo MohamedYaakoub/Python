@@ -1,7 +1,6 @@
 // Functions related to the jobs displayed in the home page
 
 eel.expose(post_job)
-
 function post_job(company, title, description, id) {
     let para = document.createElement("P");                 // Create a <p> element
     para.innerHTML = "<div class=\"card\" id=\"idn" + id + "\" style=\"width: 100%;\">\n" +
@@ -47,25 +46,19 @@ function login() {
 
 }
 
-eel.expose(login_accepted);
-
-function login_accepted() {
-    window.location.replace('/main.html');
-}
-
 eel.expose(login_rejected)
-
 function login_rejected() {
-    // var element = document.getElementById("alert-rejected-login");
-    // element.classList.add("show");
+
     $('#alert-rejected-login').addClass("show")
     setTimeout(function () {
         $('#alert-rejected-login').removeClass("show");
     }, 4000);
 }
 
-// $(document).ready(function() {
-//   // $('.alert').hide()
-//     alert("hi")
-//     })
+eel.expose(login_accepted);
+function login_accepted() {
+    window.location.replace('/main.html');
+}
+
+
 
