@@ -1,15 +1,16 @@
 // Functions related to the jobs displayed in the home page
 
 eel.expose(post_job)
+
 function post_job(company, title, description, id) {
     let para = document.createElement("P");                 // Create a <p> element
     para.innerHTML = "<div class=\"card color1\" id=\"idn" + id + "\" style=\"width: 100%;\">\n" +
         "  <div class=\"card-body\">\n" +
-        "    <h5 class=\"card-title\">" + company + "</h5>\n" +
-        "    <h6 class=\"card-subtitle mb-2 text-muted\">" + title + "</h6>\n" +
+        "    <h5 class=\"card-title\"  >" + company + "</h5>\n" +
+        "    <h6 class=\"card-subtitle mb-2 \" >" + title + "</h6>\n" +
         "    <p class=\"card-text\">" + description + "</p>\n" +
-        "    <a href=\"#\" onclick=\"acceptJob(" + id + ")\" class=\"card-link\">Accept</a>\n" +
-        "    <a href=\"#\" onclick=\"rejectJobCheck(" + id + ",'" + title + "','" + company + "')\" class=\"card-link\">Reject</a>\n" +
+        "    <button type=\"button\" onclick=\"acceptJob(" + id + ")\" class=\"btn btn-warning\">Accept</button>" +
+        "    <button type=\"button\" onclick=\"rejectJobCheck(" + id + ",'" + title + "','" + company + "')\" class=\"btn btn-outline-light\">Reject</button>" +
         "  </div>\n" +
         "</div>";                // Insert text
     document.getElementById("JobsOffer").appendChild(para);
@@ -47,6 +48,7 @@ function login() {
 }
 
 eel.expose(login_rejected)
+
 function login_rejected() {
 
     $('#alert-rejected-login').addClass("show")
@@ -56,6 +58,7 @@ function login_rejected() {
 }
 
 eel.expose(login_accepted);
+
 function login_accepted() {
     window.location.replace('/main.html');
 }
