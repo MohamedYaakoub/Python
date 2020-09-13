@@ -34,9 +34,9 @@ def log_out():
 
 @eel.expose
 def log_in(email, password):
-    # if (email.lower() == "ui@hyre.com") and (password == '123'):
-    #     eel.login_accepted()
-    eel.login_accepted()
+    if (email.lower() == "ui@hyre.com") and (password == '123'):
+        eel.login_accepted()
+    # eel.login_accepted()
 
 
 def main():
