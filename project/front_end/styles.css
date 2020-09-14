@@ -44,7 +44,7 @@
     display: block;
 }
 
-.col-4:hover #info-icon {
+.ProfileBtn:hover #info-icon {
     background-image: url("images/icon-info.svg");
 }
 
@@ -58,7 +58,7 @@
     display: block;
 }
 
-.col-4:hover #accepted-icon {
+.ProfileBtn:hover #accepted-icon {
     background-image: url("images/icon-accept.svg");
 }
 
@@ -72,7 +72,7 @@
     display: block;
 }
 
-.col-4:hover #job-icon {
+.ProfileBtn:hover #job-icon {
     background-image: url("images/icon-job.svg");
 }
 
@@ -85,7 +85,7 @@
     display: block;
 }
 
-.col-4:hover #rejected-icon {
+.ProfileBtn:hover #rejected-icon {
     background-image: url("images/icon-reject.svg");
 }
 
