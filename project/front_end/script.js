@@ -47,6 +47,13 @@ function login() {
 
 }
 
+function changeProfile() {
+    const email = document.getElementById('UserEmail').value;
+    const password = document.getElementById('UserPassword').value;
+    const location = document.getElementById('UserLocation').value;
+    eel.change_profile(email, password, location);
+}
+
 eel.expose(login_rejected)
 
 function login_rejected() {
