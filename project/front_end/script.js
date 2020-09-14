@@ -2,6 +2,7 @@
 
 eel.expose(post_job)
 function post_job(company, title, description, id) {
+    $('#alert-changed-profile').removeClass("show");
     let para = document.createElement("P");                 // Create a <p> element
     para.innerHTML = "<div class=\"card color3\" id=\"idn" + id + "\" style=\"width: 100%;\">\n" +
         "  <div class=\"card-body\">\n" +
@@ -35,6 +36,13 @@ function rejectJob(id) {
     $('#ModalRejectJob').modal('hide')
     document.getElementById(divid).style.display = "none";
 
+}
+
+eel.expose(printNoJobs)
+function printNoJobs(){
+    var x = document.getElementById("no-jobs-yet");
+    x.style.display = "block"
+    // $('#no-jobs-yet').addClass("show")
 }
 
 // Login related functions

@@ -28,9 +28,11 @@ def write_jobs():
     is called to write the available jobs to a user by using the JavaScript function eel.post_job()
      """
     jobs = JobRequests("simulation/job_requests.csv")
-    for _, row in jobs.available.iterrows():
-        eel.post_job(row['company'], row['title'], row['description'], row['id'])
-
+    if jobs.available.shape[0] > 0:
+        for _, row in jobs.available.iterrows():
+            eel.post_job(row['company'], row['title'], row['description'], row['id'])
+    else:
+        eel.printNoJobs()
 
 @eel.expose
 def log_out():
