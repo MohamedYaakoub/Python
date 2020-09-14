@@ -1,7 +1,6 @@
 // Functions related to the jobs displayed in the home page
 
 eel.expose(post_job)
-
 function post_job(company, title, description, id) {
     let para = document.createElement("P");                 // Create a <p> element
     para.innerHTML = "<div class=\"card color3\" id=\"idn" + id + "\" style=\"width: 100%;\">\n" +
@@ -48,7 +47,6 @@ function login() {
 }
 
 eel.expose(login_rejected)
-
 function login_rejected() {
 
     $('#alert-rejected-login').addClass("show")
@@ -62,7 +60,6 @@ function removeRejectAlert(){
 }
 
 eel.expose(login_accepted);
-
 function login_accepted() {
     window.location.replace('/main.html');
 }
