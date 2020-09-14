@@ -20,6 +20,79 @@
     text-align: center;
 }
 
+.ProfileName {
+    text-align: center;
+}
+
+.ProfileBtn {
+    font-weight: bold;
+}
+
+.ProfileBtn:hover {
+    background: #facb2c;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#info-icon {
+    background-image: url("images/icon-info-w.svg");
+    height: 52px;
+    width: 52px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.col-4:hover #info-icon {
+    background-image: url("images/icon-info.svg");
+}
+
+
+#accepted-icon {
+    background-image: url("images/icon-accept-w.svg");
+    height: 52px;
+    width: 52px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.col-4:hover #accepted-icon {
+    background-image: url("images/icon-accept.svg");
+}
+
+
+#job-icon {
+    background-image: url("images/icon-job-w.svg");
+    height: 52px;
+    width: 52px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.col-4:hover #job-icon {
+    background-image: url("images/icon-job.svg");
+}
+
+#rejected-icon {
+    background-image: url("images/icon-reject-w.svg");
+    height: 52px;
+    width: 52px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.col-4:hover #rejected-icon {
+    background-image: url("images/icon-reject.svg");
+}
+
+
+
+
+
 
 /* Make the button yellow when hovered */
 #homeLogin:hover {
