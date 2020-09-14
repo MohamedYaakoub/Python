@@ -47,7 +47,6 @@
 }
 
 .underlineArea .underBackground {
-
     /*line-height: 100%;*/
     background-image: linear-gradient(to right, #facb2c 0, #facb2c 100%);
     background-position: 0 0em;
@@ -68,6 +67,7 @@
 
 .HyreLogo {
     color: #facb2c;
+    font-size: 28px;
     transition: all .2s ease-in-out;
 }
 
