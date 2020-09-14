@@ -59,6 +59,15 @@ def log_in(email, password):
         eel.login_rejected()
     # eel.login_accepted()
 
+@eel.expose
+def get_information():
+    pass
+
+@eel.expose
+def change_profile(email, password, location):
+    # Check if something changed and save it in database
+    print(email, password, location)
+
 
 def main():
     """ Function that initiates the app's UI by using the eel package
