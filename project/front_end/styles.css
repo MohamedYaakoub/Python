@@ -28,9 +28,25 @@
 }
 
 
-/*Yellow marker animation*/
+/*Yellow marker animation + Transition of text color*/
 
 .container .underlineTitle {
+
+    background: linear-gradient(to right, black, black 50%, white 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position .5s ease;
+
+}
+
+.container:hover .underlineTitle {
+    background-position: 0 100%;
+}
+
+.container .underBackground {
 
     /*line-height: 100%;*/
     background-image: linear-gradient(to right, #facb2c 0, #facb2c 100%);
@@ -41,12 +57,11 @@
 
 }
 
-.container:hover .underlineTitle {
+.container:hover .underBackground {
     background-size: 100% 100%;
     background-position: 0 0em;
     color: black;
 }
-
 
 
 /*HYRE Logo color and animation*/
@@ -59,7 +74,6 @@
 .HyreLogo:hover {
     transform: scale(1.1);
 }
-
 
 
 /*Seme background colors used in the app*/
