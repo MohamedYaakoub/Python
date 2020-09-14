@@ -1,4 +1,6 @@
-.homeRegister:hover{
+/* Creates box around join us options*/
+
+.homeRegister:hover {
     cursor: pointer;
     background: #facb2c;
     color: black;
@@ -6,50 +8,74 @@
 }
 
 
-.homeRegister:hover  .Homeunderline {
+/* Underline Hyree or Hyrer in the join us area */
+.homeRegister:hover .Homeunderline {
     text-decoration: underline;
     background: #facb2c;
     color: black;
 }
 
-
-
-.homeRegister h2{
+/* Center align the h2 tags of join us options */
+.homeRegister h2 {
     text-align: center;
 }
 
 
-
-#homeLogin:hover{
+/* Make the button yellow when hovered */
+#homeLogin:hover {
     background: #facb2c;
     color: black;
 }
 
-.HyreLogo{
+
+/*Yellow marker animation*/
+
+.container .underlineTitle {
+
+    /*line-height: 100%;*/
+    background-image: linear-gradient(to right, #facb2c 0, #facb2c 100%);
+    background-position: 0 0em;
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    transition: background .5s;
+
+}
+
+.container:hover .underlineTitle {
+    background-size: 100% 100%;
+    background-position: 0 0em;
+    color: black;
+}
+
+
+
+/*HYRE Logo color and animation*/
+
+.HyreLogo {
     color: #facb2c;
     transition: all .2s ease-in-out;
 }
 
-.HyreLogo:hover{
+.HyreLogo:hover {
     transform: scale(1.1);
 }
 
-.color1{
+
+
+/*Seme background colors used in the app*/
+
+.color1 {
     background: #2F2FA2;
     color: white;
 }
 
-.color2{
-    background: #F64C72 ;
-}
 
-.color3{
+.color3 {
     background: #242582;
     color: #ffffff;
 }
 
-
-.color4{
-    background: #facb2c ;
+.color4 {
+    background: #facb2c;
 }
 
