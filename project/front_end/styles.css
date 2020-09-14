@@ -30,7 +30,7 @@
 
 /*Yellow marker animation + Transition of text color*/
 
-.container .underlineTitle {
+.underlineArea .underlineTitle {
 
     background: linear-gradient(to right, black, black 50%, white 50%);
     background-clip: text;
@@ -42,11 +42,11 @@
 
 }
 
-.container:hover .underlineTitle {
+.underlineArea:hover .underlineTitle {
     background-position: 0 100%;
 }
 
-.container .underBackground {
+.underlineArea .underBackground {
 
     /*line-height: 100%;*/
     background-image: linear-gradient(to right, #facb2c 0, #facb2c 100%);
@@ -57,7 +57,7 @@
 
 }
 
-.container:hover .underBackground {
+.underlineArea:hover .underBackground {
     background-size: 100% 100%;
     background-position: 0 0em;
     color: black;
