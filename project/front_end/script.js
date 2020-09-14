@@ -50,7 +50,11 @@ function changeProfile() {
     const email = document.getElementById('UserEmail').value;
     const password = document.getElementById('UserPassword').value;
     const location = document.getElementById('UserLocation').value;
-    eel.change_profile(email, password, location);
+    //eel.change_profile(email, password, location);
+    $('#alert-changed-profile').addClass("show")
+    setTimeout(function () {
+        $('#alert-changed-profile').removeClass("show");
+    }, 4000);
 }
 
 eel.expose(login_rejected)
