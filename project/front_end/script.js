@@ -80,7 +80,7 @@ function removeRejectAlert(){
 
 eel.expose(login_accepted);
 function login_accepted() {
-    window.location.replace('/main.html');
+    window.location.replace('/hyreeDashboard.html');
 }
 
 
