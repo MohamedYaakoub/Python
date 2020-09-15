@@ -97,18 +97,19 @@
     font-weight: bold;
 }
 
-.check-item input {
-    width: 30px;
-    height: 30px;
-    order: 1;
-    z-index: 2;
-    position: absolute;
-    right: 30px;
-    top: 25%;
-}
+
 
 .check-item label:hover, input:hover {
     cursor: pointer;
+}
+
+.check-item input:checked ~ label .check-checkbox{
+    background-image: url("images/check.svg");
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    right: 30px;
+    top:17%;
 }
 
 .check-item input:checked ~ label {
