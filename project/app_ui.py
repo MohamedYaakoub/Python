@@ -18,21 +18,50 @@ class JobRequests:
     def __init__(self, file):
         self.job_offers = pd.read_csv(file)
         self.available = self.job_offers[self.job_offers['status'] == "available"]
+        self.accepted = self.job_offers[self.job_offers['status'] == "accepted"]
+        self.rejected = self.job_offers[self.job_offers['status'] == "rejected"]
 
 
-@eel.expose
-def write_jobs():
-    """ This function writes the available jobs for a user in the HTML file
-
-    When the body of the main.html file is loaded (<body onload="eel.write_jobs()">), this function
-    is called to write the available jobs to a user by using the JavaScript function eel.post_job()
-     """
-    jobs = JobRequests("simulation/job_requests.csv")
-    if jobs.available.shape[0] > 0:
-        for _, row in jobs.available.iterrows():
+def write_new_jobs(jobs):
+    if jobs.shape[0] > 0:
+        for _, row in jobs.iterrows():
             eel.post_job(row['company'], row['title'], row['description'], row['id'])
     else:
         eel.printNoJobs()
+
+
+def write_old_jobs(jobs):
+    if jobs.shape[0] > 0:
+        for _, row in jobs.iterrows():
+            eel.post_old_jobs(row['company'], row['title'], row['description'], row['id'])
+    else:
+        eel.printNoJobs()
+
+
+@eel.expose
+def write_jobs(type):
+    """ This function receives the jobs from the db an call a function to print the jobs in the dashboards
+
+    When the body of the hyreeDashboard.html file is loaded (<body onload="eel.write_jobs()">), this function
+    is called to check what type of job needs to be printed ( Availble, accepted or rejected). Then,
+    This function calls either write_new_jobs() or write_new_jobs() to add the content in the dashboard
+     """
+
+    file = "simulation/job_requests.csv"
+    jobs_data = JobRequests(file)
+
+    if type == 'available':
+        jobs = jobs_data.available
+        write_new_jobs(jobs)
+    elif type == 'accepted':
+        jobs = jobs_data.accepted
+        write_old_jobs(jobs)
+    elif type == 'rejected':
+        jobs = jobs_data.rejected
+        write_old_jobs(jobs)
+    else:
+        eel.printNoJobs()
+
 
 @eel.expose
 def log_out():
@@ -61,9 +90,11 @@ def log_in(email, password):
         eel.login_rejected()
     # eel.login_accepted()
 
+
 @eel.expose
 def get_information():
     pass
+
 
 @eel.expose
 def change_profile(email, password, location):
