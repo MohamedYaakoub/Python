@@ -90,6 +90,28 @@
 }
 
 
+.check-item label {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px ;
+    font-weight: bold;
+}
+
+.check-item input {
+    width: 30px;
+    height: 30px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 25%;
+}
+
+.check-item input:checked ~ label{
+    background: #facb2c;
+    color: black;
+
+}
 
 
 
