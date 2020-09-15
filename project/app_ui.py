@@ -39,7 +39,7 @@ def write_old_jobs(jobs):
 
 
 @eel.expose
-def write_jobs(type):
+def write_jobs(status):
     """ This function receives the jobs from the db an call a function to print the jobs in the dashboards
 
     When the body of the hyreeDashboard.html file is loaded (<body onload="eel.write_jobs()">), this function
@@ -50,13 +50,13 @@ def write_jobs(type):
     file = "simulation/job_requests.csv"
     jobs_data = JobRequests(file)
 
-    if type == 'available':
+    if status == 'available':
         jobs = jobs_data.available
         write_new_jobs(jobs)
-    elif type == 'accepted':
+    elif status == 'accepted':
         jobs = jobs_data.accepted
         write_old_jobs(jobs)
-    elif type == 'rejected':
+    elif status == 'rejected':
         jobs = jobs_data.rejected
         write_old_jobs(jobs)
     else:
