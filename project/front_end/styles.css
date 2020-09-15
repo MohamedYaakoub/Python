@@ -93,7 +93,7 @@
 .check-item label {
     width: 100%;
     padding: 20px;
-    border-radius: 5px ;
+    border-radius: 5px;
     font-weight: bold;
 }
 
@@ -107,13 +107,32 @@
     top: 25%;
 }
 
-.check-item input:checked ~ label{
+.check-item label:hover, input:hover {
+    cursor: pointer;
+}
+
+.check-item input:checked ~ label {
     background: #facb2c;
     color: black;
 
 }
 
+.tooltip-inner {
+    text-align: left;
+}
 
+
+.infoIconPreferences {
+    background-image: url("images/icon-sm-info-w.svg");
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 35%;
+}
+
+.check-item input:checked ~ label .infoIconPreferences {
+    background-image: url("images/icon-sm-info.svg");
+}
 
 
 /* Make the button yellow when hovered */
