@@ -1,10 +1,5 @@
-"""
-User Interface
-"""
-
 import eel
 import pandas as pd
-
 
 class JobRequests:
     """" This class handles the data from the job_requests database.
@@ -61,64 +56,3 @@ def write_jobs(status):
         write_old_jobs(jobs)
     else:
         eel.printNoJobs()
-
-
-@eel.expose
-def log_out():
-    pass
-
-
-@eel.expose
-def log_in(email, password):
-    """ This function approves or declines the log in of a user
-
-        When the user try to log in, the JavaScript function login() sends to python the user email and password. If
-        approved, python indicates to the JS function login_accepted() that the login was accepted.
-
-        Args:
-        email(str):  User email
-        password(str): User password
-
-        Returns:
-        None
-
-        """
-    if (email.lower() == "ui@hyre.com") and (password == '123'):
-        eel.login_accepted()
-    else:
-        eel.sleep(0.5)  # This sleep is needed to first load the page and then display the alert of Login rejected
-        eel.login_rejected()
-    # eel.login_accepted()
-
-
-@eel.expose
-def get_user_information():
-    eel.sleep(3.0)  # Test if waiting for info works
-    eel.writeUserInformation('ui@hyre.com', '123', 'Somewhere')
-
-@eel.expose
-def update_user_information(email, password, location):
-    print(email, password, location)
-    # get user information again to see if something has changed
-    eel.sleep(1.0) # Test if waiting for updating info works
-    #eel.updateAccepted()
-    eel.updateRejected()
-
-
-
-
-@eel.expose
-def change_profile(email, password, location):
-    # Check if something changed and save it in database
-    print(email, password, location)
-
-
-def main():
-    """ Function that initiates the app's UI by using the eel package
-        """
-    eel.init('front_end')
-    eel.start('home.html', size=(800, 1050))
-
-
-if __name__ == "__main__":
-    main()
