@@ -92,8 +92,10 @@ def log_in(email, password):
 
 
 @eel.expose
-def get_information():
-    pass
+def get_user_information():
+    eel.sleep(3)  # Test if waiting for info works
+    eel.writeUserInformation('ui@hyre.com', '123', 'Somewhere')
+
 
 
 @eel.expose

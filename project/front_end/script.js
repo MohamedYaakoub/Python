@@ -101,6 +101,19 @@ function changeProfile() {
     }, 4000);
 }
 
+eel.expose(writeUserInformation)
+function writeUserInformation(email, password, location) {
+    document.getElementById('UserEmail').removeAttribute('readonly');
+    document.getElementById('UserPassword').removeAttribute('readonly');
+    document.getElementById('UserLocation').removeAttribute('readonly');
+    document.getElementById('UserEmail').value = email;
+    document.getElementById('UserPassword').value = password;
+    document.getElementById('UserLocation').value = location;
+    $('#alert-loading-information').removeClass("show");
+
+
+}
+
 
 function tooltips() {
   $('[data-toggle="tooltip"]').tooltip()
