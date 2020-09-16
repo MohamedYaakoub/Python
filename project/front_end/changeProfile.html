@@ -48,8 +48,8 @@
 
 <div class="container mt-2  pt-1">
     <div class="alert alert-primary alert-dismissible fade show" style="background: #facb2c; color: black" role="alert"
-         id="alert-loading-information">
-        <strong>Please wait,</strong> loading your information!
+         id="alert-profile-multi">
+        <div id="profile-alert-text"><strong>Please wait,</strong> loading your information!</div>
     </div>
 </div>
 
@@ -61,7 +61,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-8 ">
-                <form onsubmit="updateUserInformation()">
+                <form onsubmit="return false">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="UserEmail" aria-describedby="emailHelp"
@@ -75,7 +75,7 @@
                         <label for="exampleInputPassword1">Location</label>
                         <input type="location" class="form-control" id="UserLocation" readonly>
                     </div>
-                    <button type="submit" class="btn btn-outline-light" id="changeProfile">Save changes</button>
+                    <button onclick="updateUserInformation()" type="submit" class="btn btn-outline-light" id="changeProfileButton">Save changes</button>
                 </form>
             </div>
             <div class="col-12 col-sm-4 col-lg-3">
@@ -83,16 +83,6 @@
 
             </div>
         </div>
-    </div>
-</div>
-
-<div class="container mt-2  pt-1">
-    <div class="alert alert-primary alert-dismissible fade" style="background: #facb2c; color: black" role="alert"
-         id="alert-changed-user-information">
-        <strong>Yes!</strong> The changes have been saved!
-        <button type="button" class="close" onclick="removeChangedAlert()" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
     </div>
 </div>
 

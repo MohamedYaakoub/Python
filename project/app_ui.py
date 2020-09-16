@@ -100,7 +100,8 @@ def get_user_information():
 def update_user_information(email, password, location):
     # get user information again to see if something has changed
     eel.sleep(1.0) # Test if waiting for updating info works
-    eel.updateAccepted()
+    #eel.updateAccepted()
+    eel.updateRejected()
 
 
 
