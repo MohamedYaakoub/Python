@@ -14,3 +14,14 @@ sheet = client.open("Testing").sheet1
 
 all = sheet.get_all_records()
 print(all)
+
+class Database:
+    def __init__(self, creds, client):
+        scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+                 "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+        creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret_1.json', scope)
+        client = gspread.authorize(creds)
+
+
+
+
