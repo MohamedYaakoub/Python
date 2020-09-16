@@ -26,3 +26,10 @@ def log_in(email, password):
         eel.sleep(0.5)  # This sleep is needed to first load the page and then display the alert of Login rejected
         eel.login_rejected()
     # eel.login_accepted()
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
