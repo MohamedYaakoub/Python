@@ -61,7 +61,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-8 ">
-                <form onsubmit="changeProfile()">
+                <form onsubmit="updateUserInformation()">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="UserEmail" aria-describedby="emailHelp"
@@ -83,6 +83,16 @@
 
             </div>
         </div>
+    </div>
+</div>
+
+<div class="container mt-2  pt-1">
+    <div class="alert alert-primary alert-dismissible fade" style="background: #facb2c; color: black" role="alert"
+         id="alert-changed-user-information">
+        <strong>Yes!</strong> The changes have been saved!
+        <button type="button" class="close" onclick="removeChangedAlert()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
 </div>
 

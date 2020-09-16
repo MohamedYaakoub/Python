@@ -85,21 +85,8 @@ function removeRejectAlert() {
 eel.expose(login_accepted);
 function login_accepted() {
     window.location.replace('/hyreeDashboard.html');
-
-
 }
 
-
-function changeProfile() {
-    const email = document.getElementById('UserEmail').value;
-    const password = document.getElementById('UserPassword').value;
-    const location = document.getElementById('UserLocation').value;
-    //eel.change_profile(email, password, location);
-    $('#alert-changed-profile').addClass("show")
-    setTimeout(function () {
-        $('#alert-changed-profile').removeClass("show");
-    }, 4000);
-}
 
 eel.expose(writeUserInformation)
 function writeUserInformation(email, password, location) {
@@ -110,8 +97,19 @@ function writeUserInformation(email, password, location) {
     document.getElementById('UserPassword').value = password;
     document.getElementById('UserLocation').value = location;
     $('#alert-loading-information').removeClass("show");
+}
 
+eel.expose(updateUserInformation)
+function updateUserInformation() {
+    new_email = document.getElementById('UserEmail').value;
+    new_password = document.getElementById('UserPassword').value;
+    new_location = document.getElementById('UserLocation').value;
+    eel.update_user_information(email, password, location)
+}
 
+eel.expose(updateAccepted)
+function updateAccepted() {
+    $('#alert-changed-user-information').addClass("show");
 }
 
 
