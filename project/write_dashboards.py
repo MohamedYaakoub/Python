@@ -18,7 +18,7 @@ class JobRequests:
         self.active = self.job_offers[self.job_offers['status'] == "active"]
 
 
-def write_new_jobs(jobs):
+def write_available_jobs(jobs):
     if jobs.shape[0] > 0:
         for _, row in jobs.iterrows():
             eel.post_job(row['company'], row['title'], row['description'], row['id'])
@@ -30,6 +30,14 @@ def write_old_jobs(jobs):
     if jobs.shape[0] > 0:
         for _, row in jobs.iterrows():
             eel.post_old_jobs(row['company'], row['title'], row['description'], row['id'])
+    else:
+        eel.printNoJobs()
+
+
+def write_active_jobs(jobs):
+    if jobs.shape[0] > 0:
+        for _, row in jobs.iterrows():
+            eel.post_active_job(row['company'], row['title'], row['description'], row['id'])
     else:
         eel.printNoJobs()
 
@@ -48,7 +56,7 @@ def write_jobs(status):
 
     if status == 'available':
         jobs = jobs_data.available
-        write_new_jobs(jobs)
+        write_available_jobs(jobs)
     elif status == 'accepted':
         jobs = jobs_data.accepted
         write_old_jobs(jobs)
