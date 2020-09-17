@@ -65,6 +65,6 @@ def write_jobs(status):
         write_old_jobs(jobs)
     elif status == 'active':
         jobs = jobs_data.active
-        write_new_jobs(jobs)
+        write_active_jobs(jobs)
     else:
         eel.printNoJobs()
