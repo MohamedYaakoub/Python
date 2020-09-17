@@ -48,13 +48,12 @@ function choose_preferences() {
     if (document.getElementById('defaultCheck4').checked) {
         preferences.push(document.getElementById('defaultCheck4').value);
     }
-    console.log(preferences);
     eel.choose_preferences(preferences);
 }
 
 eel.expose(preferences_accepted)
 function preferences_accepted() {
-    window.location.href = 'hyreeDashboard.html';
+    window.location.href = 'hyreeLocation.html';
 }
 
 eel.expose(preferences_rejected)
@@ -63,6 +62,32 @@ function preferences_rejected() {
     setTimeout(function () {
         $('#alert-rejected-preferences').removeClass("show");
     }, 4000);
+}
+
+function get_location() {
+    x = document.getElementById('test');
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser...";
+    }
+}
+
+eel.expose(location_accepted)
+function location_accepted() {
+    window.location.href = 'hyreeDashboard.html';
+}
+
+eel.expose(location_rejected)
+function location_rejected() {
+    $('#alert-rejected-location').addClass("show")
+    setTimeout(function () {
+        $('#alert-rejected-location').removeClass("show");
+    }, 4000);
+}
+
+function showPosition(position) {
+    eel.save_position(position.coords.longitude, position.coords.latitude);
 }
 
 

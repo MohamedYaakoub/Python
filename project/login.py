@@ -49,6 +49,12 @@ def choose_preferences(preferences):
     eel.preferences_accepted()
     #eel.preferences_rejected()
 
+@eel.expose
+def save_position(longitude, latitude):
+    print(longitude, latitude)
+    eel.location_accepted()
+    #eel.location_rejected()
+
 def main():
     pass
 

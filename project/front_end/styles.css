@@ -263,3 +263,22 @@
 input[name='nameField'] {
     width: 70%;
 }
+
+#choose-preferences-title {
+    text-align: center;
+}
+
+#location-text {
+    text-align: center;
+}
+
+#getLocationButton {
+    position: relative;
+}
+
+#getLocation {
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+}
