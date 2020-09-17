@@ -19,7 +19,12 @@ function removeRejectAlert() {
     $('#alert-rejected-login').removeClass("show");
 }
 
-eel.expose(login_accepted);
-function login_accepted() {
+eel.expose(accept_hyree);
+function accept_hyree() {
     window.location.replace('/hyreeDashboard.html');
+}
+
+eel.expose(accept_hyrer);
+function accept_hyrer() {
+    window.location.replace('/hyrerDashboard.html');
 }
