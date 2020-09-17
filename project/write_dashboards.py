@@ -1,6 +1,7 @@
 import eel
 import pandas as pd
 
+
 class JobRequests:
     """" This class handles the data from the job_requests database.
 
@@ -59,6 +60,7 @@ def write_active_jobs(jobs):
     else:
         eel.printNoJobs()
 
+
 def write_accepted_jobs(jobs):
     """ Send to JS the jobs accepted to be posted on the hyrer dashboard
 
@@ -72,12 +74,13 @@ def write_accepted_jobs(jobs):
     else:
         eel.printNoJobs()
 
+
 @eel.expose
 def write_jobs(status, hyrer=False):
     """ This function receives the jobs from the db an call a function to print the jobs in the dashboards
 
     When the body of the hyreeDashboard.html file is loaded (<body onload="eel.write_jobs()">), this function
-    is called to check what type of job needs to be printed ( Availble, accepted or rejected). Then,
+    is called to check what type of job needs to be printed ( Available, accepted or rejected). Then,
     This function calls either write_new_jobs() or write_new_jobs() to add the content in the dashboard
 
     Args:
