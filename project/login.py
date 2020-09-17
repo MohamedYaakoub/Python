@@ -32,6 +32,16 @@ def log_in(email, password):
 def register(email, password, password_repeat, user_type):
     print(email, password, password_repeat, user_type)
 
+@eel.expose
+def hyree_register(first_name, last_name, email, password1, password2):
+    print(first_name, last_name, email, password1, password2)
+
+    # ADD MORE CHECKS
+    if password1 == password2:
+        eel.hyreeRegisterAccepted()
+    else:
+        eel.hyreeRegisterRejected()
+
 def main():
     pass
 

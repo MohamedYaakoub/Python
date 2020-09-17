@@ -5,6 +5,31 @@ function login() {
 
 }
 
+eel.expose(register_hyree)
+function register_hyree() {
+    console.log("BOOP")
+    firstName = document.getElementById('RegisterFirstName').value;
+    lastName  = document.getElementById('RegisterLastName').value;
+    email     = document.getElementById('RegisterEmail').value;
+    password1 = document.getElementById('RegisterPassword1').value;
+    password2 = document.getElementById('RegisterPassword2').value;
+    eel.hyree_register(firstName, lastName, email, password1, password2);
+}
+
+eel.expose(hyreeRegisterAccepted)
+function hyreeRegisterAccepted() {
+    window.location.href = 'hyreeChoosePreferences.html'
+}
+
+
+eel.expose(hyreeRegisterRejected)
+function hyreeRegisterRejected() {
+    $('#alert-rejected-register').addClass("show")
+    setTimeout(function () {
+        $('#alert-rejected-register').removeClass("show");
+    }, 4000);
+}
+
 
 eel.expose(login_rejected)
 function login_rejected() {
@@ -29,16 +54,6 @@ function accept_hyrer() {
     window.location.replace('/hyrerDashboard.html');
 }
 
-eel.expose(register);
-function register(){
-    email = document.getElementById('RegisterEmail').value;
-    password = document.getElementById('RegisterPassword').value;
-    passwordRepeat = document.getElementById('RegisterPasswordRepeat').value;
-    userType = document.querySelector('input[name="userType"]:checked').value;
-    eel.register(email, password, passwordRepeat, userType);
-
-}
-
 function openTab(evt, tabName) {
     console.log(tabName);
     var i, tabcontent, tablinks;
@@ -53,3 +68,4 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
 }
+
