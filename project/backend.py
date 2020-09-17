@@ -88,7 +88,5 @@ class User:
     # def number_users(cls):
     #     cls.users = 5
 
-
-
 # Testing
 # if __name__ == '__main__':
