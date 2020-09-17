@@ -29,16 +29,16 @@ class Database:
         for entry in self.get_all():
             count += 1 if ''.join(entry) != '' else 0
         return count
-    # TODO: 1- remove() to remove entry given ID (either first matching entry or all)
-    # TODO: 2- clean() to remove empty lines automatically
-    # TODO: 3- amend(id, new_entry) to update given line (add just one cell)
+    # e3mel: 1- remove() to remove entry given ID (either first matching entry or all)
+    # e3mel: 2- clean() to remove empty lines automatically
+    # e3mel: 3- amend(id, new_entry) to update given line (add just one cell)
 
 
 class Request:
     def __init__(self, request_details):
         self.identifier = int(request_details[0])
         self.date = request_details[1]
-        # TODO: 4- get time automatically (from internet) and add request time. User
+        # e3mel: 4- get time automatically (from internet) and add request time. User
         self.time = request_details[2]
         self.location = str(request_details[3])
         self.hyrer = str(request_details[4])
