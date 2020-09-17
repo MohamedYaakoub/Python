@@ -29,6 +29,7 @@ function register(){
     email = document.getElementById('RegisterEmail').value;
     password = document.getElementById('RegisterPassword').value;
     passwordRepeat = document.getElementById('RegisterPasswordRepeat').value;
-    eel.register(email, password, passwordRepeat);
+    userType = document.querySelectorAll('input[name="userType"]');
+    eel.register(email, password, passwordRepeat, userType);
 
 }

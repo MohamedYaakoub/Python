@@ -27,8 +27,8 @@ def log_in(email, password):
     # eel.login_accepted()
 
 @eel.expose
-def register(email, password, passwordRepeat):
-    print(email, password, passwordRepeat)
+def register(email, password, passwordRepeat, userType):
+    print(email, password, passwordRepeat, userType)
 
 def main():
     pass
