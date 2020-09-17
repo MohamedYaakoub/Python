@@ -21,7 +21,9 @@ def log_in(email, password):
 
         """
     if (email.lower() == "ui@hyre.com") and (password == '123'):
-        eel.login_accepted()
+        eel.accept_hyree()
+    elif (email.lower() == "ui2@hyre.com") and (password == '123'):
+        eel.accept_hyrer()
     else:
         eel.login_rejected()
     # eel.login_accepted()
