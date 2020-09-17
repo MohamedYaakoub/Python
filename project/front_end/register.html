@@ -47,13 +47,29 @@
     </div>
 </div>
 
-<div class="">
-    <div class="container mt-1">
-        <h1>Register</h1>
-    </div>
+<div class="container mt-1">
+    <h1>Register</h1>
+</div>
+
+<div class="registerTab">
+    <button class="tablinks" onclick="openTab(event, 'hyree')" id="defaultOpen"><h3>Hyree</h3></button>
+    <button class="tablinks" onclick="openTab(event, 'hyrer')"><h3>Hyrer</h3></button>
+</div>
+
+<div id="hyree" class="registerTabContent">
+    <p>Hyree form goes here...</p>
+</div>
+
+<div id="hyrer" class="registerTabContent">
+    <p>Hyrer form goes here...</p>
+</div>
+
+<script>
+    document.getElementById("defaultOpen").click();
+</script>
 
 
-    <div class="container">
+    <!--<div class="container">
         <div class="row">
             <div class="col-12 col-sm-8 ">
                 <form onsubmit="return false" ">
@@ -85,8 +101,7 @@
 
             </div>
         </div>
-    </div>
-</div>
+    </div>-->
 
 </body>
 </html>
