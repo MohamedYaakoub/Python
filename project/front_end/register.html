@@ -58,7 +58,27 @@
     </div>
 
     <div id="hyree" class="registerTabContent">
-        <p>Hyree form goes here...</p>
+        <div class="col-12 col-sm-8">
+            <form onsubmit="return false">
+                <div class="form-group">
+                    <br>
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="RegisterEmail" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">
+                        We'll never share your email with anyone else.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="RegisterPassword1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword2">Repeat password</label>
+                    <input type="password" class="form-control" id="RegisterPassword2">
+                </div>
+                <button type="submit" onclick="registerHyree()" class="btn btn-outline-light" id="hyreeRegister">Enter</button>
+            </form>
+        </div>
     </div>
 
     <div id="hyrer" class="registerTabContent">
