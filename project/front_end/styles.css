@@ -259,3 +259,7 @@
 .tabHeader {
     color: #FFFFFF;
 }
+
+input[name='nameField'] {
+    width: 70%;
+}

@@ -59,7 +59,14 @@
 
     <div id="hyree" class="registerTabContent">
         <div class="col-12 col-sm-8">
-            <form onsubmit="return false">
+            <form onsubmit="return false" id="hyreeRegisterForm">
+                <div class="form-group">
+                    <label for="exampleInputName">First name</label>
+                    <input type="text" class="form-control" id="RegisterFirstName" name="nameField">
+                    <label for="exampleInputName">Last name</label>
+                    <input type="text" class="form-control" id="RegisterLastName" name="nameField">
+                </div>
+                <br>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" class="form-control" id="RegisterEmail" aria-describedby="emailHelp">
