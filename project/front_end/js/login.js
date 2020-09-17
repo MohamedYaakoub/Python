@@ -23,3 +23,12 @@ eel.expose(login_accepted);
 function login_accepted() {
     window.location.replace('/hyreeDashboard.html');
 }
+
+eel.expose(register);
+function register(){
+    email = document.getElementById('RegisterEmail').value;
+    password = document.getElementById('RegisterPassword').value;
+    passwordRepeat = document.getElementById('RegisterPasswordRepeat').value;
+    eel.register(email, password, passwordRepeat);
+
+}
