@@ -15,6 +15,7 @@ class JobRequests:
         self.available = self.job_offers[self.job_offers['status'] == "available"]
         self.accepted = self.job_offers[self.job_offers['status'] == "accepted"]
         self.rejected = self.job_offers[self.job_offers['status'] == "rejected"]
+        self.active = self.job_offers[self.job_offers['status'] == "active"]
 
 
 def write_new_jobs(jobs):
@@ -54,5 +55,8 @@ def write_jobs(status):
     elif status == 'rejected':
         jobs = jobs_data.rejected
         write_old_jobs(jobs)
+    elif status == 'active':
+        jobs = jobs_data.active
+        write_new_jobs(jobs)
     else:
         eel.printNoJobs()
