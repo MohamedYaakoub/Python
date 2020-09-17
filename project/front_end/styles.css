@@ -211,11 +211,14 @@
 .registerTab {
     overflow:hidden;
     margin-top: 30px;
-    border: 1px solid #ccc;
+    border: none;
     background-color: #2F2FA2;
 }
 
 .registerTab button {
+    font-size: 1.17em;
+    font-weight: bold;
+    color: white;
     background-color: inherit;
     float: left;
     border: none;
@@ -223,22 +226,22 @@
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    font-size: 17px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .registerTab button:hover {
-    background-color: #ddd;
+    background-color: #242582;
 }
 
 .registerTab button.active {
-    background-color: aqua;
+    color: #000000;
+    background-color: #facb2c;
 }
 
 .registerTabContent {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
-    border-top: none;
 }
 
 .topright {
