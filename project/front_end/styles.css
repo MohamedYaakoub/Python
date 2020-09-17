@@ -231,7 +231,7 @@
 }
 
 .registerTab button.active {
-    background-color: #ccc;
+    background-color: aqua;
 }
 
 .registerTabContent {

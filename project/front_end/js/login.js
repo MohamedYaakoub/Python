@@ -40,7 +40,7 @@ function register(){
 }
 
 function openTab(evt, tabName) {
-    console.log(evt)
+    console.log(tabName);
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("registerTabContent");
     for (i=0; i<tabcontent.length; i++) {
@@ -51,5 +51,5 @@ function openTab(evt, tabName) {
         tablinks[i].className = tablinks[i].className.replace("active", "");
     }
     document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += "active";
+    evt.currentTarget.className += " active";
 }
