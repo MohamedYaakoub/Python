@@ -28,3 +28,14 @@ eel.expose(accept_hyrer);
 function accept_hyrer() {
     window.location.replace('/hyrerDashboard.html');
 }
+
+eel.expose(register);
+function register(){
+    email = document.getElementById('RegisterEmail').value;
+    password = document.getElementById('RegisterPassword').value;
+    passwordRepeat = document.getElementById('RegisterPasswordRepeat').value;
+    userType = document.querySelectorAll('input[name="userType"]');
+    eel.register(email, password, passwordRepeat, userType);
+
+}
+
