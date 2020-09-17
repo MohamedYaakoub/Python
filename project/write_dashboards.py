@@ -99,7 +99,10 @@ def write_jobs(status, hyrer=False):
             write_hyree_history(jobs)
     elif status == 'rejected':
         jobs = jobs_data.rejected
-        write_hyree_history(jobs)
+        if hyrer:
+            write_hyree_history(jobs)
+        else:
+            write_hyree_history(jobs)
     elif status == 'active':
         jobs = jobs_data.active
         write_active_jobs(jobs)
