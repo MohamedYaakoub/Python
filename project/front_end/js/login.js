@@ -128,3 +128,19 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+
+
+function hyrerRegister(){
+    location.href = 'register.html'+'?saved_item_id='+'hyrer';
+}
+
+//
+function checkIfHyrer(){
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('saved_item_id') === 'hyrer'){
+        document.getElementById("hyrertab").click();
+    } else{
+        document.getElementById("defaultOpen").click();
+    }
+
+}
