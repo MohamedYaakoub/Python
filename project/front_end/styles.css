@@ -283,3 +283,7 @@ input[name='nameField'] {
     transform: translate(-50%, 0%);
 }
 
+.newjobFormTitle {
+    font-size: 25px;
+    margin-bottom: 5px;
+}

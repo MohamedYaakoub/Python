@@ -21,3 +21,30 @@ function nodates() {
     }
   });
 }
+
+
+
+function otherjobtype() {
+
+  $typeselect = $("#jobtype");
+  $typeWrite = $("#otherTypeinput");
+  $cb = $("#othertypeofjob");
+  $cb.on('change', function() {
+    if ($cb.is(':checked')) {
+      $typeselect.hide();
+      $typeselect.prop('disabled', true);
+      $typeWrite.prop('disabled', false);
+      $typeWrite.prop('required', true);
+      $typeWrite.show()
+
+
+    } else {
+      $typeselect.show();
+      $typeselect.prop('disabled', false);
+      $typeWrite.hide()
+      $typeWrite.prop('disabled', true);
+      $typeWrite.prop('required', false);
+    }
+  });
+
+}
