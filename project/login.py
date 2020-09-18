@@ -41,7 +41,7 @@ def hyree_register(first_name, last_name, email, password1, password2):
 @eel.expose
 def hyrer_register(name, email, password1, password2):
     print(name, email, password1, password2)
-    # name is array with [firstName, lastName, companyName]
+    # name can be array (firstname, lastname) if personal, or string (companyname) for companies
     if password1 == password2:
         eel.hyrerRegisterAccepted()
     else:

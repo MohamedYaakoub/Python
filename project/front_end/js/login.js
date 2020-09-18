@@ -49,8 +49,11 @@ function register_hyrer() {
     email     = document.getElementById('HyrerEmail').value;
     password1 = document.getElementById('HyrerPassword1').value;
     password2 = document.getElementById('HyrerPassword2').value;
-    let name = [firstName, lastName, companyName]
-    eel.hyrer_register(name, email, password1, password2);
+    if (document.getElementById('createPersonal').checked) {
+        eel.hyrer_register([firstName, lastName], email, password1, password2);
+    } else {
+        eel.hyrer_register(companyName, email, password1, password2);
+    }
 }
 
 eel.expose(hyrerRegisterAccepted)
