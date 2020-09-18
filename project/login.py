@@ -39,6 +39,15 @@ def hyree_register(first_name, last_name, email, password1, password2):
         eel.hyreeRegisterRejected()
 
 @eel.expose
+def hyrer_register(name, email, password1, password2):
+    print(name, email, password1, password2)
+    # name is array with [firstName, lastName, companyName]
+    if password1 == password2:
+        eel.hyrerRegisterAccepted()
+    else:
+        eel.hyrerRegisterRejected()
+
+@eel.expose
 def choose_preferences(preferences):
     print(preferences)
     # go to database

@@ -18,7 +18,6 @@ function change_fields() {
 
 eel.expose(register_hyree)
 function register_hyree() {
-    console.log("BOOP")
     firstName = document.getElementById('RegisterFirstName').value;
     lastName  = document.getElementById('RegisterLastName').value;
     email     = document.getElementById('RegisterEmail').value;
@@ -40,6 +39,33 @@ function hyreeRegisterRejected() {
         $('#alert-rejected-register').removeClass("show");
     }, 4000);
 }
+
+
+eel.expose(register_hyrer)
+function register_hyrer() {
+    firstName = document.getElementById('HyrerFirstName').value;
+    lastName  = document.getElementById('HyrerLastName').value;
+    companyName = document.getElementById('HyrerCompanyName').value;
+    email     = document.getElementById('HyrerEmail').value;
+    password1 = document.getElementById('HyrerPassword1').value;
+    password2 = document.getElementById('HyrerPassword2').value;
+    let name = [firstName, lastName, companyName]
+    eel.hyrer_register(name, email, password1, password2);
+}
+
+eel.expose(hyrerRegisterAccepted)
+function hyrerRegisterAccepted() {
+    window.location.href = 'hyrerDashboard.html'
+}
+
+eel.expose(hyrerRegisterRejected)
+function hyrerRegisterRejected() {
+    $('#alert-rejected-register').addClass("show")
+    setTimeout(function () {
+        $('#alert-rejected-register').removeClass("show");
+    }, 4000);
+}
+
 
 function tooltips() {
   $('[data-toggle="tooltip"]').tooltip()
