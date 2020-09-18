@@ -71,7 +71,7 @@ class Request:
 class User:
     user_database = Database("client_secret_1.json", "User Database")
 
-    def __init__(self, name, birthdate, location, preferences):
+    def __init__(self, name, birthdate, location, preferences, password, email):
         self.user_id = randint(10000, 99999)
         while str(self.user_id) in self.user_database.sheet.col_values(1):
             self.user_id = randint(10000, 99999)     # we need a better ID system for example Hyre-89273 or Hyree-34234
@@ -79,10 +79,13 @@ class User:
         self.birthdate = birthdate
         self.location = location
         self.preferences = preferences
+        self.password = password
+        self.email = email
 
     def add_user(self):
         self.user_database.add([str(self.user_id), self.name,
-                                self.birthdate, self.location, self.preferences])
+                                self.birthdate, self.location,
+                                self.preferences, self.email, self.password])
 
     # @classmethod
     # def number_users(cls):
