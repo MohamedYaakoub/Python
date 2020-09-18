@@ -3,6 +3,7 @@ from random import randint
 from oauth2client.service_account import ServiceAccountCredentials
 import gspread
 import ntplib
+import numpy as np
 
 
 class Database:
@@ -90,6 +91,13 @@ class User:
     # @classmethod
     # def number_users(cls):
     #     cls.users = 5
+
+def get_userinfo():
+    user_database = Database("client_secret_1.json", "User Database")
+    alldata = np.array(user_database.sheet.get_all_values())                        #was not able to slice ROW from list so I used numpy
+    #return user_database.sheet.col_values(2), user_database.sheet.col_values(7)
+    return alldata[1:,0], alldata[1:,1], alldata[1:,6] , alldata[1:,5]
+
 
 # Testing
 # if __name__ == '__main__':
