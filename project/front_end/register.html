@@ -88,7 +88,43 @@
     </div>
 
     <div id="hyrer" class="registerTabContent">
-        <p>Hyrer form goes here...</p>
+        <div class="col-12 col-sm-8">
+            <form onsubmit="return false" id="hyreeRegisterForm">
+                <div class="form-group">
+                    <input type="radio" onclick="change_fields()" id="createPersonal" name="inputType" value="createPersonal" checked>
+                    <label for="createPersonal">Personal</label><br>
+                    <input type="radio" onclick="change_fields()" id="createCompany" name="inputType" value="createCompany">
+                    <label for="createCompany">Company</label>
+                </div>
+                <div class="form-group" id="personalFields">
+                    <label for="exampleInputName">First name</label>
+                    <input type="text" class="form-control" id="RegisterFirstName" name="nameField">
+                    <label for="exampleInputName">Last name</label>
+                    <input type="text" class="form-control" id="RegisterLastName" name="nameField">
+                </div>
+                <div class="form-group" id="companyFields">
+                    <label for="exampleInputName">Company name</label>
+                    <input type="text" class="form-control" id="RegisterCompanyName" name="nameField"><br><br><br>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="RegisterEmail" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">
+                        We'll never share your email with anyone else.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="RegisterPassword1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword2">Repeat password</label>
+                    <input type="password" class="form-control" id="RegisterPassword2">
+                </div>
+                <button onclick="register_hyree()" class="btn btn-outline-light" id="hyreeRegister">Enter</button>
+            </form>
+        </div>
     </div>
 </div>
 

@@ -5,6 +5,17 @@ function login() {
 
 }
 
+
+function change_fields() {
+    if (document.getElementById('createPersonal').checked) {
+        document.getElementById('personalFields').style.display = 'block';
+        document.getElementById('companyFields').style.display = 'none';
+    } else {
+        document.getElementById('personalFields').style.display = 'none';
+        document.getElementById('companyFields').style.display = 'block';
+    }
+}
+
 eel.expose(register_hyree)
 function register_hyree() {
     console.log("BOOP")
