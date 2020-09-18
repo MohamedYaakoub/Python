@@ -74,7 +74,7 @@ class User:
     def __init__(self, name, birthdate, location, preferences):
         self.user_id = randint(10000, 99999)
         while str(self.user_id) in self.user_database.sheet.col_values(1):
-            self.user_id = randint(10000, 99999)
+            self.user_id = randint(10000, 99999)     # we need a better ID system for example Hyre-89273 or Hyree-34234
         self.name = name
         self.birthdate = birthdate
         self.location = location
