@@ -216,7 +216,7 @@
 }
 
 .registerTab button {
-    font-size: 1.17em;
+    font-size: 25px;
     font-weight: bold;
     color: white;
     background-color: inherit;
@@ -225,9 +225,9 @@
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
-    transition: 0.3s;
+    /*transition: 0.3s;*/
     width: 50%;
-    border-radius: 10px 10px 0px 0px;
+
 }
 
 .registerTab button:hover {
@@ -237,16 +237,17 @@
 .registerTab button.active {
     color: #000000;
     background-color: #facb2c;
+
 }
 
 .registerTabContent {
-    background-color: #2b2c99;
-    display: none;
-    padding: 6px 12px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 0px 0px 10px 10px;
+    background-color: #facb2c;
+    color: black;
+}
+
+.registerTabContent label{
+    font-size: 24px;
+    margin-bottom: 4px;
 }
 
 .topright {
@@ -263,9 +264,6 @@
     color: #FFFFFF;
 }
 
-input[name='nameField'] {
-    width: 70%;
-}
 
 #choose-preferences-title {
     text-align: center;

@@ -52,80 +52,121 @@
 </div>
 
 <div class="container">
-    <div class="registerTab">
-        <button class="tablinks" onclick="openTab(event, 'hyree')" id="defaultOpen">Hyree</button>
-        <button class="tablinks" onclick="openTab(event, 'hyrer')" id="hyrertab">Hyrer</button>
+    <div class="row registerTab">
+        <button class="tablinks rounded-top" onclick="openTab(event, 'hyree')" id="defaultOpen">Hyree</button>
+        <button class="tablinks rounded-top" onclick="openTab(event, 'hyrer')" id="hyrertab">Hyrer</button>
     </div>
 
-    <div id="hyree" class="registerTabContent">
-        <div class="col-12 col-sm-8">
-            <form onsubmit="return false" id="hyreeRegisterForm">
-                <div class="form-group">
-                    <label for="exampleInputName">First name</label>
-                    <input type="text" class="form-control" id="RegisterFirstName" name="nameField">
-                    <label for="exampleInputName">Last name</label>
+    <div id="hyree" class="row registerTabContent rounded-bottom rounded-right p-5">
+        <!--        <div class="col-12 col-sm-8">-->
+        <form onsubmit="return false" id="hyreeRegisterForm">
+            <div class="row form-group d-flex justify-content-center mb-0">
+                <div class="col-sm-5 ">
+                    <label for="RegisterFirstName">First name</label>
+                    <input type="text" class="form-control mr-auto" id="RegisterFirstName" name="nameField">
+                </div>
+                <div class="col-sm-5 ">
+                    <label for="RegisterLastName">Last name</label>
                     <input type="text" class="form-control" id="RegisterLastName" name="nameField">
                 </div>
-                <br>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
+            </div>
+            <div class="row form-group d-flex justify-content-center pt-3">
+                <div class="col-sm-10 ">
+                    <label for="RegisterEmail">Email address</label>
                     <input type="email" class="form-control" id="RegisterEmail" aria-describedby="emailHelp">
-                    <small id="emailHelp" class="form-text text-muted">
+                    <small id="emailHelp" class="form-text ">
                         We'll never share your email with anyone else.
                     </small>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
+            </div>
+            <div class="row form-group d-flex justify-content-center pt-3">
+                <div class="col-sm-10">
+                    <label for="RegisterPassword1">Password</label>
                     <input type="password" class="form-control" id="RegisterPassword1">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword2">Repeat password</label>
+            </div>
+            <div class="row form-group d-flex justify-content-center pt-3">
+                <div class="col-sm-10">
+                    <label for="RegisterPassword2">Repeat password</label>
                     <input type="password" class="form-control" id="RegisterPassword2">
                 </div>
-                <button onclick="register_hyree()" class="btn btn-outline-light" id="hyreeRegister">Enter</button>
-            </form>
-        </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-1"></div>
+                <div class="col">
+                    <button onclick="register_hyree()" class="btn btn-primary" id="hyreeRegister">Register</button>
+                </div>
+            </div>
+        </form>
+        <!--        </div>-->
     </div>
 
-    <div id="hyrer" class="registerTabContent">
-        <div class="col-12 col-sm-8">
-            <form onsubmit="return false" id="hyrerRegisterForm">
-                <div class="form-group">
-                    <input type="radio" onclick="change_fields()" id="createPersonal" name="inputType" value="createPersonal" checked>
-                    <label for="createPersonal">Personal</label><br>
-                    <input type="radio" onclick="change_fields()" id="createCompany" name="inputType" value="createCompany">
+    <div id="hyrer" class=" row registerTabContent rounded-bottom rounded-left p-5">
+
+        <form onsubmit="return false" id="hyrerRegisterForm">
+            <div class="row form-group d-flex justify-content-center">
+                <div class="col-sm-4 ">
+                    <input type="radio" onclick="change_fields()" id="createPersonal" name="inputType"
+                           value="createPersonal" checked>
+                    <label for="createPersonal">Personal</label>
+                </div>
+                <div class="col-sm-4 ">
+                    <input type="radio" onclick="change_fields()" id="createCompany" name="inputType"
+                           value="createCompany">
                     <label for="createCompany">Company</label>
                 </div>
-                <div class="form-group" id="personalFields">
-                    <label for="exampleInputName">First name</label>
-                    <input type="text" class="form-control" id="HyrerFirstName" name="nameField">
-                    <label for="exampleInputName">Last name</label>
-                    <input type="text" class="form-control" id="HyrerLastName" name="nameField">
+            </div>
+            <div id="personalFields">
+                <div class="row form-group d-flex justify-content-center pt-3">
+                    <div class="col-sm-5 ">
+                        <label for="HyrerFirstName">First name</label>
+                        <input type="text" class="form-control" id="HyrerFirstName" name="nameField">
+                    </div>
+                    <div class="col-sm-5 ">
+                        <label for="HyrerLastName">Last name</label>
+                        <input type="text" class="form-control" id="HyrerLastName" name="nameField">
+                    </div>
                 </div>
-                <div class="form-group" id="companyFields">
-                    <label for="exampleInputName">Company name</label>
-                    <input type="text" class="form-control" id="HyrerCompanyName" name="nameField"><br><br><br>
+            </div>
+            <div id="companyFields">
+                <div class="row form-group d-flex justify-content-center pt-3">
+                    <div class="col-sm-10">
+                        <label for="HyrerCompanyName">Company name</label>
+                        <input type="text" class="form-control" id="HyrerCompanyName" name="nameField">
+                    </div>
                 </div>
-                <br>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
+            </div>
+            <div class="row form-group d-flex justify-content-center pt-3">
+                <div class="col-sm-10">
+                    <label for="HyrerEmail">Email address</label>
                     <input type="email" class="form-control" id="HyrerEmail" aria-describedby="emailHelp">
-                    <small id="emailHelp" class="form-text text-muted">
+                    <small id="emailHelp" class="form-text ">
                         We'll never share your email with anyone else.
                     </small>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
+            </div>
+            <div class="row form-group d-flex justify-content-center pt-3">
+                <div class="col-sm-10">
+                    <label for="HyrerPassword1">Password</label>
                     <input type="password" class="form-control" id="HyrerPassword1">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword2">Repeat password</label>
-                    <input type="password" class="form-control" id="HyrerPassword2">
+            </div>
+            <div class="row form-group d-flex justify-content-center pt-3">
+                <div class="col-sm-10">
+                    <label for="HyrerPassword1">Repeat password</label>
+                    <input type="password" class="form-control" id="HyrerPassword1">
                 </div>
-                <button onclick="register_hyrer()" class="btn btn-outline-light" id="HyrerRegister">Enter</button>
-            </form>
-        </div>
+            </div>
+
+            <div class="row pt-3">
+                <div class="col-1"></div>
+                <div class="col">
+                    <button onclick="register_hyrer()" class="btn btn-primary" id="HyrerRegister">Register</button>
+                </div>
+            </div>
+        </form>
     </div>
+
 </div>
 
 <script>
