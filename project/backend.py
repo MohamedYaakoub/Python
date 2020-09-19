@@ -22,6 +22,9 @@ class Database:
         # for entry in
         self.sheet.insert_row(request, 2)
 
+    def add_cell(self, row, col, msg):
+        self.sheet.update_cell(row, col, msg)
+
     def delete(self, index):
         self.sheet.delete_rows(index)
 
@@ -96,7 +99,9 @@ def get_userinfo():
     user_database = Database("client_secret_1.json", "User Database")
     alldata = np.array(user_database.sheet.get_all_values())                        #was not able to slice ROW from list so I used numpy
     #return user_database.sheet.col_values(2), user_database.sheet.col_values(7)
-    return alldata[1:,0], alldata[1:,1], alldata[1:,6] , alldata[1:,5]
+    return alldata[1:,0], alldata[1:,1], alldata[1:,6] , alldata[1:,5], alldata[1:,8], user_database        #leave "user_database" in its position
+                                                                                                            #I use -1 index to import it,
+                                                                                                            #if you want to add to the list add before "user database"
 
 
 # Testing
