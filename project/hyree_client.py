@@ -1,4 +1,5 @@
 from project.backend import Database,Request,User, get_userinfo
+import time
 
 def login():
 
@@ -8,15 +9,22 @@ def login():
         username = input(str("username: "))
         pw = input(str("password: "))
 
-        ids = get_userinfo()[0].tolist()
-        usernames = get_userinfo()[1].tolist()
-        passwords = get_userinfo()[2].tolist()         #find better method?
+        userinfo = get_userinfo()               #gurantees similar pull
+
+        ids = userinfo[0].tolist()
+        usernames = userinfo[1].tolist()         #Should login with Email!!
+        passwords = userinfo[2].tolist()         #find better method?
 
         if username in usernames:
             index = usernames.index(username)
             if pw in passwords[index]:
                 print("you are in!!")
                 print("your user id is " + ids[index])
+
+                #TODO: familirize the system with other information of the user
+                #current_user =  #class
+                online_log(userinfo[-1],1)
+
             else:
                 print("Incorrect Password")     #user should try again
         else:
@@ -38,6 +46,16 @@ def login():
                     input(str("Password: ")))
         user.user_id = "Hy - " + str(user.user_id)
         user.add_user()
-login()
+        print("User successfully added.")
 
+
+def online_log(userinfo,index):
+    userinfo.add_cell(index+1, 8, "Online")
+    while True:       #True essentially means that the user is online
+        userinfo.add_cell(index+1, 9, Request.get_time())
+        time.sleep(15)
+
+
+#online_log()
+login()
 
