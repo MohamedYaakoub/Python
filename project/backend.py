@@ -13,7 +13,7 @@ class Database:
         self.creds = ServiceAccountCredentials.from_json_keyfile_name(json, self.scope)
         self.client = gspread.authorize(self.creds)
         self.sheet = self.client.open(sheet_name).sheet1
-        self.size = self.count()
+        #self.size = self.count()
 
     def get_all(self):
         return self.sheet.get_all_values()
