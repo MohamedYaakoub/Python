@@ -164,7 +164,7 @@
 .underlineArea .underBackground {
     /*line-height: 100%;*/
     background-image: linear-gradient(to right, #facb2c 0, #facb2c 100%);
-    background-position: 0 0em;
+    background-position: 0 0;
     background-size: 0 100%;
     background-repeat: no-repeat;
     transition: background .5s;
@@ -173,7 +173,7 @@
 
 .underlineArea:hover .underBackground {
     background-size: 100% 100%;
-    background-position: 0 0em;
+    background-position: 0 0;
     color: black;
 }
 
@@ -227,7 +227,7 @@
     padding: 14px 16px;
     transition: 0.3s;
     width: 50%;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0 0;
 }
 
 .registerTab button:hover {
@@ -246,7 +246,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0 0 10px 10px;
 }
 
 .topright {
