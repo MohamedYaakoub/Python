@@ -1,5 +1,6 @@
 from project.backend import Database,Request,User, get_userinfo
 import time
+import threading
 
 def login():
 
@@ -23,7 +24,15 @@ def login():
 
                 #TODO: familirize the system with other information of the user
                 #current_user =  #class
-                online_log(userinfo[-1],1)
+
+                onlinelog = threading.Thread(target=online_log, args=(userinfo[-1],index), daemon=True)
+                onlinelog.start()
+
+
+                print("mee")
+                time.sleep(8)
+                #online_log(userinfo[-1],index)
+
 
             else:
                 print("Incorrect Password")     #user should try again
@@ -47,15 +56,17 @@ def login():
         user.user_id = "Hy - " + str(user.user_id)
         user.add_user()
         print("User successfully added.")
+        login()             #to login again
 
 
 def online_log(userinfo,index):
-    userinfo.add_cell(index+1, 8, "Online")
+    userinfo.add_cell(index+2, 8, "Online")
     while True:       #True essentially means that the user is online
-        userinfo.add_cell(index+1, 9, Request.get_time())
+        userinfo.add_cell(index+2, 9, Request.get_time())
         time.sleep(15)
-
 
 #online_log()
 login()
+
+#TODO: add function that allwos for editing
 
