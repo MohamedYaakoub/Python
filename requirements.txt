@@ -7,3 +7,4 @@ mock
 gspread
 oauth2client
 ntplib
+pandas
