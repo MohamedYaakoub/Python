@@ -111,3 +111,19 @@ def write_jobs(status, hyrer=False):
         write_active_jobs(jobs)
     else:
         eel.printNoJobs()
+
+
+@eel.expose
+def get_new_job_data(job_type, job_other_type, job_description, job_offer, start_date, end_date):
+    """ This function gets from js the data entered by a hyrer when requesting a new job
+
+    Args:
+    job_type(str):  Title of the job when selected from the options given to the user
+    job_other_type(str): Title of the job when typed by the user
+    job_description(str): Description of the job
+    job_offer(int): Job value in euros estimated by the hyrer
+    start_date(str): Start date (yyyy-mm-dd)
+    end_date(str): End date (yyyy-mm-dd)
+     """
+
+    pass

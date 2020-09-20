@@ -77,15 +77,16 @@
 </div>
 
 <div class="container pt-4 ">
-    <form>
+    <form id="newjobForm" onsubmit="postNewJob()" action="hyrerOpen.html" >
+        <input type="hidden" name="new_job" value="True" />
         <div class="form-group row d-flex justify-content-center mb-2 ">
             <div class="col-sm-8">
                 <label for="jobtype" class="newjobFormTitle">Job type</label>
                 <select id="jobtype" class="custom-select" required>
                     <option value="">Choose...</option>
-                    <option value="1">Cleaning</option>
-                    <option value="2">Programming</option>
-                    <option value="3">Delivering</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Programming">Programming</option>
+                    <option value="Delivering">Delivering</option>
                 </select>
 
                 <input class="form-control" style="display: none" type="text" id="otherTypeinput">
@@ -159,7 +160,7 @@
         <div class="form-group row ">
             <div class="col-sm-2"></div>
             <div class="col-sm-3 mt-4">
-                <button type="submit" class="btn btn-warning">Get it done!</button>
+                <button type="submit" class="btn btn-warning" >Get it done!</button>
             </div>
         </div>
     </form>

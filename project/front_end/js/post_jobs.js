@@ -86,3 +86,17 @@ function printNoJobs() {
     var x = document.getElementById("no-jobs-yet");
     x.style.display = "block"
 }
+
+eel.expose(postNewJob)
+function postNewJob(){
+    const job_type = $("#jobtype").val()
+    const job_other_type = $("#otherTypeinput").val()
+    const job_description = $("#description").val()
+    const job_offer = $("#offer").val()
+    const start_date = $("#startdate").val()
+    const end_date = $("#enddate").val()
+    eel.get_new_job_data(job_type, job_other_type, job_description, job_offer, start_date, end_date);
+
+
+
+}
