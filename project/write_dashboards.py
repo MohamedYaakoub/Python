@@ -125,5 +125,5 @@ def get_new_job_data(job_type, job_other_type, job_description, job_offer, start
     start_date(str): Start date (yyyy-mm-dd)
     end_date(str): End date (yyyy-mm-dd)
      """
+    print(job_type, job_other_type, job_description, job_offer, start_date, end_date)
 
-    pass
