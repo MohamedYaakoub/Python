@@ -227,11 +227,6 @@
     padding: 14px 16px;
     /*transition: 0.3s;*/
     width: 50%;
-<<<<<<< HEAD
-    border-radius: 10px 10px 0 0;
-=======
-
->>>>>>> origin/Changes_Register_Form
 }
 
 .registerTab button:hover {
@@ -245,15 +240,7 @@
 }
 
 .registerTabContent {
-<<<<<<< HEAD
-    background-color: #2b2c99;
-    display: none;
-    padding: 6px 12px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 0 0 10px 10px;
-=======
+
     background-color: #facb2c;
     color: black;
 }
@@ -261,7 +248,7 @@
 .registerTabContent label{
     font-size: 24px;
     margin-bottom: 4px;
->>>>>>> origin/Changes_Register_Form
+
 }
 
 .topright {
