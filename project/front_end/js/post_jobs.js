@@ -103,5 +103,10 @@ function job_successfully_created(){
     var urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('new_job') === 'True'){
         $('.alert').show();
+        setTimeout(function () {
+        $('.alert').hide();
+    }, 4000);
+
     }
+
 }
