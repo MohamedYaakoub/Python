@@ -4,8 +4,6 @@ from oauth2client.service_account import ServiceAccountCredentials
 import gspread
 import ntplib
 import pandas as pd
-# YAAKOUB
-import numpy as np
 
 
 class Database:
@@ -20,15 +18,12 @@ class Database:
     def get_all(self):
         self.database = pd.DataFrame(self.sheet.get_all_records())
         return self.database
-    # YAAKOUB
-    # def get_all(self):
-    #     return self.sheet.get_all_values()
 
     def find(self, **selection):
         found = self.get_all()                                          # REQUEST
         for colname, value in selection.items():
             found = found[found[str(colname)] == str(value)]
-        idx = found.index + 2
+        idx = found.index
         return idx, found
 
     def add(self, row, row_n=2):
@@ -54,10 +49,6 @@ class Database:
     # TODO: 2- amend(id, new_entry) to update given line (add just one cell)
     # TODO: 3- check batch update from gspread
     # TODO: 4- maintainence (moves all 'Done' requests to another sheet and cleans up
-
-    # YAAKOUB
-    def add_cell(self, row, col, msg):
-        self.sheet.update_cell(row, col, msg)
 
 
 class Request:
@@ -98,35 +89,25 @@ class Request:
 class User:
     user_database = Database("client_secret_1.json", "User Database")
 
-    def __init__(self, name, birthdate, location, preferences, password, email):
+    def __init__(self, name, birthdate, location, preferences):
         self.user_id = randint(10000, 99999)
         while str(self.user_id) in self.user_database.sheet.col_values(1):
-            self.user_id = randint(10000, 99999)     # we need a better ID system for example Hyre-89273 or Hyree-34234
+            self.user_id = randint(10000, 99999)
         self.name = name
         self.birthdate = birthdate
         self.location = location
         self.preferences = preferences
-        self.password = password
-        self.email = email
 
-    # YAAKOUB
     def add_user(self):
         self.user_database.add([str(self.user_id), self.name,
-                                self.birthdate, self.location, self.preferences, self.birthdate, self.location,
-                                self.preferences, self.email, self.password])
-        # TODO: def remove(self):
-        # TODO: def update(self)
-        # TODO: def lookup(self, id) # stat
+                                self.birthdate, self.location, self.preferences])
+    # TODO: def remove(self):
+    # TODO: def update(self)
+    # TODO: def lookup(self, id) # stat
 
-
-# YAAKOUB
-def get_userinfo():
-    user_database = Database("client_secret_1.json", "User Database")
-    alldata = np.array(user_database.sheet.get_all_values())                        #was not able to slice ROW from list so I used numpy
-    #return user_database.sheet.col_values(2), user_database.sheet.col_values(7)
-    return alldata[1:,0], alldata[1:,1], alldata[1:,6] , alldata[1:,5], alldata[1:,8], user_database        #leave "user_database" in its position
-                                                                                                            #I use -1 index to import it,
-                                                                                                            #if you want to add to the list add before "user database"
+    # @classmethod
+    # def number_users(cls):
+    #     cls.users = 5
 
 # Testing
 # if __name__ == '__main__':
