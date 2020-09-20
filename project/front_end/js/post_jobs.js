@@ -95,8 +95,13 @@ function postNewJob(){
     const job_offer = $("#offer").val()
     const start_date = $("#startdate").val()
     const end_date = $("#enddate").val()
+
     eel.get_new_job_data(job_type, job_other_type, job_description, job_offer, start_date, end_date);
+}
 
-
-
+function job_successfully_created(){
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('new_job') === 'True'){
+        $('.alert').show();
+    }
 }
