@@ -2,7 +2,6 @@ function login() {
     const email = document.getElementById('LoginEmail').value;
     const password = document.getElementById('LoginPassword').value;
     eel.log_in(email, password);
-
 }
 
 
