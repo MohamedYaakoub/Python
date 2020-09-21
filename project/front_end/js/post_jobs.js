@@ -23,7 +23,7 @@ function post_active_job(company, title, description, id) {
         "    <h5 class=\"card-title\"  >" + company + "</h5>\n" +
         "    <h6 class=\"card-subtitle mb-2 \" >" + title + "</h6>\n" +
         "    <p class=\"card-text\">" + description + "</p>\n" +
-        "    <button type=\"button\" onclick=\"rejectJobCheck(" + id + ",'" + title + "','" + company + "')\" class=\"btn btn-outline-light\">Cancel</button>" +
+        "    <button type=\"button\" onclick=\"cancelJobCheck(" + id + ",'" + title + "','" + company + "')\" class=\"btn btn-outline-light\">Cancel</button>" +
         "  </div>\n" +
         "</div>";                // Insert text
     document.getElementById("JobsOffer").appendChild(para);
@@ -69,6 +69,14 @@ function acceptJob(id) {
 function rejectJobCheck(id, title, company) {
     $('#ModalRejectJobTitle').text('Reject offer by ' + company)
     $('#ModalRejectJobBody').html('Are you sure you want to reject the <b>' + title + '</b> job at <b>' + company + '</b> ?')
+    $('#ModalRejectJob').modal('show')
+    $("#modalConfirmRejectbtn").attr("onclick", "rejectJob(" + id + ")");
+
+}
+
+function cancelJobCheck(id, title, company) {
+    $('#ModalRejectJobTitle').text('Cancel ' + title + ' job')
+    $('#ModalRejectJobBody').html('Are you sure you want to cancel the <b>' + title + '</b> job request?')
     $('#ModalRejectJob').modal('show')
     $("#modalConfirmRejectbtn").attr("onclick", "rejectJob(" + id + ")");
 
