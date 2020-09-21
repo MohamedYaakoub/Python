@@ -38,10 +38,10 @@
     </nav>
 </div>
 <div class="container mt-2  pt-1">
-    <div class="alert alert-primary alert-dismissible fade" style="background: #facb2c; color: black" role="alert"
+    <div class="alert alert-primary alert-dismissible fade show" style="display: none; background: #facb2c; color: black" role="alert"
          id="alert-rejected-register">
         <strong>Oops!</strong> You have not entered your information correctly!
-        <button type="button" class="close" onclick="removeRejectAlert()" aria-label="Close">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -59,21 +59,21 @@
 
     <div id="hyree" class="row registerTabContent rounded-bottom rounded-right p-5">
         <!--        <div class="col-12 col-sm-8">-->
-        <form onsubmit="return false" id="hyreeRegisterForm">
+        <form onsubmit="register_hyree();return false" id="hyreeRegisterForm">
             <div class="row form-group d-flex justify-content-center mb-0">
                 <div class="col-sm-5 ">
                     <label for="RegisterFirstName">First name</label>
-                    <input type="text" class="form-control mr-auto" id="RegisterFirstName" name="nameField">
+                    <input type="text" class="form-control mr-auto" id="RegisterFirstName" name="nameField" required>
                 </div>
                 <div class="col-sm-5 ">
                     <label for="RegisterLastName">Last name</label>
-                    <input type="text" class="form-control" id="RegisterLastName" name="nameField">
+                    <input type="text" class="form-control" id="RegisterLastName" name="nameField" required>
                 </div>
             </div>
             <div class="row form-group d-flex justify-content-center pt-3">
                 <div class="col-sm-10 ">
                     <label for="RegisterEmail">Email address</label>
-                    <input type="email" class="form-control" id="RegisterEmail" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="RegisterEmail" aria-describedby="emailHelp" required>
                     <small id="emailHelp" class="form-text ">
                         We'll never share your email with anyone else.
                     </small>
@@ -82,19 +82,19 @@
             <div class="row form-group d-flex justify-content-center pt-3">
                 <div class="col-sm-10">
                     <label for="RegisterPassword1">Password</label>
-                    <input type="password" class="form-control" id="RegisterPassword1">
+                    <input type="password" class="form-control" id="RegisterPassword1" required>
                 </div>
             </div>
-            <div class="row form-group d-flex justify-content-center pt-3">
+            <div class="row form-group d-flex justify-content-center pt-3" >
                 <div class="col-sm-10">
                     <label for="RegisterPassword2">Repeat password</label>
-                    <input type="password" class="form-control" id="RegisterPassword2">
+                    <input type="password" class="form-control" id="RegisterPassword2" required>
                 </div>
             </div>
             <div class="row pt-3">
                 <div class="col-1"></div>
                 <div class="col">
-                    <button onclick="register_hyree()" class="btn btn-primary" id="hyreeRegister">Register</button>
+                    <button  class="btn btn-primary" id="hyreeRegister">Register</button>
                 </div>
             </div>
         </form>
@@ -153,8 +153,8 @@
             </div>
             <div class="row form-group d-flex justify-content-center pt-3">
                 <div class="col-sm-10">
-                    <label for="HyrerPassword1">Repeat password</label>
-                    <input type="password" class="form-control" id="HyrerPassword1">
+                    <label for="HyrerPassword2">Repeat password</label>
+                    <input type="password" class="form-control" id="HyrerPassword2">
                 </div>
             </div>
 

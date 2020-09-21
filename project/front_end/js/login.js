@@ -33,9 +33,9 @@ function hyreeRegisterAccepted() {
 
 eel.expose(hyreeRegisterRejected)
 function hyreeRegisterRejected() {
-    $('#alert-rejected-register').addClass("show")
-    setTimeout(function () {
-        $('#alert-rejected-register').removeClass("show");
+        $('.alert').show();
+        setTimeout(function () {
+        $('.alert').hide();
     }, 4000);
 }
 
