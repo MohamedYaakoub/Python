@@ -17,15 +17,14 @@ function register_hyree() {
 }
 
 eel.expose(hyreeRegisterAccepted)
-
 function hyreeRegisterAccepted() {
     window.location.href = 'hyreeChoosePreferences.html';
 }
 
 
-eel.expose(hyreeRegisterRejected)
-
-function hyreeRegisterRejected() {
+eel.expose(RegisterRejected)
+function RegisterRejected(message) {
+    $('#alertMessage').text(message);
     $('.alert').show();
     setTimeout(function () {
         $('.alert').hide();
@@ -60,7 +59,6 @@ function hyrerIsCompany() {
 }
 
 eel.expose(register_hyrer)
-
 function register_hyrer() {
     firstName = document.getElementById('HyrerFirstName').value;
     lastName = document.getElementById('HyrerLastName').value;
@@ -76,19 +74,10 @@ function register_hyrer() {
 }
 
 eel.expose(hyrerRegisterAccepted)
-
 function hyrerRegisterAccepted() {
     window.location.href = 'hyrerDashboard.html'
 }
 
-eel.expose(hyrerRegisterRejected)
-
-function hyrerRegisterRejected() {
-    $('#alert-rejected-register').addClass("show")
-    setTimeout(function () {
-        $('#alert-rejected-register').removeClass("show");
-    }, 4000);
-}
 
 
 function tooltips() {

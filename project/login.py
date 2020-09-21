@@ -33,10 +33,12 @@ def hyree_register(first_name, last_name, email, password1, password2):
     print(first_name, last_name, email, password1, password2)
 
     # ADD MORE CHECKS
-    if password1 == password2:
+    if email.lower() in ['exist@hyre.com']:
+        eel.RegisterRejected('This email is already registered!')
+    elif password1 == password2:
         eel.hyreeRegisterAccepted()
     else:
-        eel.hyreeRegisterRejected()
+        eel.RegisterRejected('The password does not match')
 
 @eel.expose
 def hyrer_register(name, email, password1, password2):
@@ -45,7 +47,7 @@ def hyrer_register(name, email, password1, password2):
     if password1 == password2:
         eel.hyrerRegisterAccepted()
     else:
-        eel.hyrerRegisterRejected()
+        eel.RegisterRejected('The password does not match')
 
 @eel.expose
 def choose_preferences(preferences):
