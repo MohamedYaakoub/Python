@@ -21,7 +21,7 @@
 
 </head>
 
-<body class="color1">
+<body class="color1" onload='hyrerIsCompany()'>
 <div class="container mt-1">
     <nav class="navbar navbar-expand navbar-dark pl-0">
         <a class="HyreLogo navbar-brand" style="color:#facb2c" href="home.html"><h3>HẎRE</h3></a>
@@ -103,15 +103,15 @@
 
     <div id="hyrer" class=" row registerTabContent rounded-bottom rounded-left p-5">
 
-        <form onsubmit="return false" id="hyrerRegisterForm">
+        <form onsubmit="register_hyrer();return false"  id="hyrerRegisterForm">
             <div class="row form-group d-flex justify-content-center">
                 <div class="col-sm-4 ">
-                    <input type="radio" onclick="change_fields()" id="createPersonal" name="inputType"
+                    <input type="radio" onclick="hyrerIsCompany()" id="createPersonal" name="inputType"
                            value="createPersonal" checked>
                     <label for="createPersonal">Personal</label>
                 </div>
                 <div class="col-sm-4 ">
-                    <input type="radio" onclick="change_fields()" id="createCompany" name="inputType"
+                    <input type="radio" onclick="hyrerIsCompany()" id="createCompany" name="inputType"
                            value="createCompany">
                     <label for="createCompany">Company</label>
                 </div>
@@ -120,11 +120,11 @@
                 <div class="row form-group d-flex justify-content-center pt-3">
                     <div class="col-sm-5 ">
                         <label for="HyrerFirstName">First name</label>
-                        <input type="text" class="form-control" id="HyrerFirstName" name="nameField">
+                        <input type="text" class="form-control" id="HyrerFirstName" name="nameField" required>
                     </div>
                     <div class="col-sm-5 ">
                         <label for="HyrerLastName">Last name</label>
-                        <input type="text" class="form-control" id="HyrerLastName" name="nameField">
+                        <input type="text" class="form-control" id="HyrerLastName" name="nameField" required>
                     </div>
                 </div>
             </div>
@@ -132,14 +132,14 @@
                 <div class="row form-group d-flex justify-content-center pt-3">
                     <div class="col-sm-10">
                         <label for="HyrerCompanyName">Company name</label>
-                        <input type="text" class="form-control" id="HyrerCompanyName" name="nameField">
+                        <input type="text" class="form-control" id="HyrerCompanyName" name="nameField" required>
                     </div>
                 </div>
             </div>
             <div class="row form-group d-flex justify-content-center pt-3">
                 <div class="col-sm-10">
                     <label for="HyrerEmail">Email address</label>
-                    <input type="email" class="form-control" id="HyrerEmail" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="HyrerEmail" aria-describedby="emailHelp" required>
                     <small id="emailHelp" class="form-text ">
                         We'll never share your email with anyone else.
                     </small>
@@ -148,20 +148,20 @@
             <div class="row form-group d-flex justify-content-center pt-3">
                 <div class="col-sm-10">
                     <label for="HyrerPassword1">Password</label>
-                    <input type="password" class="form-control" id="HyrerPassword1">
+                    <input type="password" class="form-control" id="HyrerPassword1" required>
                 </div>
             </div>
             <div class="row form-group d-flex justify-content-center pt-3">
                 <div class="col-sm-10">
                     <label for="HyrerPassword2">Repeat password</label>
-                    <input type="password" class="form-control" id="HyrerPassword2">
+                    <input type="password" class="form-control" id="HyrerPassword2" required>
                 </div>
             </div>
 
             <div class="row pt-3">
                 <div class="col-1"></div>
                 <div class="col">
-                    <button onclick="register_hyrer()" class="btn btn-primary" id="HyrerRegister">Register</button>
+                    <button class="btn btn-primary" id="HyrerRegister">Register</button>
                 </div>
             </div>
         </form>
