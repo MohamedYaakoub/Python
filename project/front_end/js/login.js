@@ -102,19 +102,10 @@ function choose_preferences() {
 }
 
 eel.expose(preferences_accepted)
-
 function preferences_accepted() {
     window.location.href = 'hyreeLocation.html';
 }
 
-eel.expose(preferences_rejected)
-
-function preferences_rejected() {
-    $('#alert-rejected-preferences').addClass("show")
-    setTimeout(function () {
-        $('#alert-rejected-preferences').removeClass("show");
-    }, 4000);
-}
 
 function get_location() {
     x = document.getElementById('test');
@@ -126,35 +117,15 @@ function get_location() {
 }
 
 eel.expose(location_accepted)
-
 function location_accepted() {
     window.location.href = 'hyreeDashboard.html';
 }
 
-eel.expose(location_rejected)
-function location_rejected() {
-    $('#alert-rejected-location').addClass("show")
-    setTimeout(function () {
-        $('#alert-rejected-location').removeClass("show");
-    }, 4000);
-}
 
 function showPosition(position) {
     eel.save_position(position.coords.longitude, position.coords.latitude);
 }
 
-
-eel.expose(login_rejected)
-function login_rejected() {
-    $('#alert-rejected-login').addClass("show")
-    setTimeout(function () {
-        $('#alert-rejected-login').removeClass("show");
-    }, 4000);
-}
-
-function removeRejectAlert() {
-    $('#alert-rejected-login').removeClass("show");
-}
 
 eel.expose(accept_hyree);
 function accept_hyree() {

@@ -54,7 +54,7 @@ def choose_preferences(preferences):
     print(preferences)
     # go to database
     eel.preferences_accepted()
-    #eel.preferences_rejected()
+    # If preferences are rejected use: eel.error_pop_up("Your preferences were not saved!")
 
 @eel.expose
 def save_position(longitude, latitude):
