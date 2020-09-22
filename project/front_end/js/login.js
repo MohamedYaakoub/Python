@@ -22,8 +22,8 @@ function hyreeRegisterAccepted() {
 }
 
 
-eel.expose(RegisterRejected)
-function RegisterRejected(message) {
+eel.expose(error_pop_up)
+function error_pop_up(message) {
     $('#alertMessage').text(message);
     $('.alert').show();
     setTimeout(function () {
@@ -132,7 +132,6 @@ function location_accepted() {
 }
 
 eel.expose(location_rejected)
-
 function location_rejected() {
     $('#alert-rejected-location').addClass("show")
     setTimeout(function () {
@@ -146,7 +145,6 @@ function showPosition(position) {
 
 
 eel.expose(login_rejected)
-
 function login_rejected() {
     $('#alert-rejected-login').addClass("show")
     setTimeout(function () {
@@ -159,7 +157,6 @@ function removeRejectAlert() {
 }
 
 eel.expose(accept_hyree);
-
 function accept_hyree() {
     window.location.replace('/hyreeDashboard.html');
 }

@@ -25,7 +25,7 @@ def log_in(email, password):
     elif (email.lower() == "ui2@hyre.com") and (password == '123'):
         eel.accept_hyrer()
     else:
-        eel.login_rejected()
+        eel.error_pop_up("You have entered an invalid username or password!")
     # eel.login_accepted()
 
 @eel.expose
@@ -34,11 +34,11 @@ def hyree_register(first_name, last_name, email, password1, password2):
 
     # ADD MORE CHECKS
     if email.lower() in ['exist@hyre.com']:
-        eel.RegisterRejected('This email is already registered!')
+        eel.error_pop_up('This email is already registered!')
     elif password1 == password2:
         eel.hyreeRegisterAccepted()
     else:
-        eel.RegisterRejected('The password does not match')
+        eel.error_pop_up('The password does not match')
 
 @eel.expose
 def hyrer_register(name, email, password1, password2):
@@ -47,7 +47,7 @@ def hyrer_register(name, email, password1, password2):
     if password1 == password2:
         eel.hyrerRegisterAccepted()
     else:
-        eel.RegisterRejected('The password does not match')
+        eel.error_pop_up('The password does not match')
 
 @eel.expose
 def choose_preferences(preferences):
