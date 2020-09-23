@@ -137,10 +137,10 @@
 }
 
 
-/* Make the button yellow when hovered */
-#homeLogin:hover {
+/* Make all white outline button turn yellow when hovered */
+button.btn-outline-light:hover {
     background: #facb2c;
-    color: black;
+        color: black;
 }
 
 
@@ -234,15 +234,18 @@
 }
 
 .registerTab button.active {
-    color: #000000;
-    background-color: #facb2c;
-
+    /*color: #000000;*/
+    /*background-color: #facb2c;*/
+    background-color: #242582;
+    color: white;
 }
 
 .registerTabContent {
 
-    background-color: #facb2c;
-    color: black;
+    /*background-color: #facb2c;*/
+    /*color: black;*/
+    background-color: #242582;
+    color: white;
 }
 
 .registerTabContent label{

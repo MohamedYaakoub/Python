@@ -10,7 +10,7 @@ function post_job(company, title, description, id) {
         "    <h6 class=\"card-subtitle mb-2 \" >" + title + "</h6>\n" +
         "    <p class=\"card-text\">" + description + "</p>\n" +
         "    <button type=\"button\" onclick=\"acceptJob(" + id + ")\" class=\"btn btn-warning\">Accept</button>" +
-        "    <button type=\"button\" onclick=\"rejectJobCheck(" + id + ",'" + title + "','" + company + "')\" class=\"btn btn-outline-light\">Reject</button>" +
+        "    <button type=\"button\" onclick=\"rejectJobCheck(" + id + ",'" + title + "','" + company + "')\" class=\"btn btn-outline-secondary\">Reject</button>" +
         "  </div>\n" +
         "</div>";                // Insert text
     document.getElementById("JobsOffer").appendChild(para);
