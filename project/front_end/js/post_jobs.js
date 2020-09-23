@@ -1,3 +1,5 @@
+
+// Function that writes the available jobs to a hyree
 eel.expose(post_job)
 function post_job(company, title, description, id) {
     $('#alert-changed-profile').removeClass("show");
@@ -14,6 +16,7 @@ function post_job(company, title, description, id) {
     document.getElementById("JobsOffer").appendChild(para);
 }
 
+// Function that writes the open jobs a hyrer has
 eel.expose(post_active_job)
 function post_active_job(company, title, description, id) {
     $('#alert-changed-profile').removeClass("show");
@@ -29,6 +32,7 @@ function post_active_job(company, title, description, id) {
     document.getElementById("JobsOffer").appendChild(para);
 }
 
+// Function that writes to a hyrer the jobs that have been accepted by a hyree
 eel.expose(post_accepted_job)
 function post_accepted_job(company, title, description, id) {
     $('#alert-changed-profile').removeClass("show");
@@ -38,7 +42,7 @@ function post_accepted_job(company, title, description, id) {
         "    <h5 class=\"card-title\"  >" + company + "</h5>\n" +
         "    <h6 class=\"card-subtitle mb-2 \" >" + title + "</h6>\n" +
         "    <p class=\"card-text\">" + description + "</p>\n" +
-        "    <button type=\"button\" onclick=\"rejectJobCheck(" + id + ",'" + title + "','" + company + "')\" class=\"btn btn-warning\">Contact Hyree</button>" +
+        "    <button type=\"button\" onclick=\"contactHyree(" + id + ",'" + title + "','" + company + "')\" class=\"btn btn-warning\">Contact Hyree</button>" +
         "  </div>\n" +
         "</div>";                // Insert text
     document.getElementById("JobsOffer").appendChild(para);
@@ -73,6 +77,16 @@ function rejectJobCheck(id, title, company) {
     $("#modalConfirmRejectbtn").attr("onclick", "rejectJob(" + id + ")");
 
 }
+
+function contactHyree(id, title, company) {
+    $('#ModalRejectJobTitle').text('Contact (Hyree name)' )
+    $('#ModalRejectJobBody').html('<b>email:</b> hyree@email.com <br> ' +
+        '<b>Phone:</b> 0000:0000')
+    $('#ModalRejectJob').modal('show')
+    $("#modalConfirmRejectbtn").attr("onclick", "rejectJob(" + id + ")");
+
+}
+
 
 function cancelJobCheck(id, title, company) {
     $('#ModalRejectJobTitle').text('Cancel ' + title + ' job')
