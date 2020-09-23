@@ -58,21 +58,21 @@
         <h1>Person McPersonface</h1>
     </div>
 
-    <div class="container">
-        <div class="row">
+    <div class="container mx-3">
+        <div class="row  ">
             <div class="col-12 col-sm-8 ">
                 <form onsubmit="return false">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="UserEmail">Email address</label>
                         <input type="email" class="form-control" id="UserEmail" aria-describedby="emailHelp"
                                readonly>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
+                        <label for="UserPassword">Password</label>
                         <input type="password" class="form-control" id="UserPassword" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Location</label>
+                        <label for="UserLocation">Location</label>
                         <input type="location" class="form-control" id="UserLocation" readonly>
                     </div>
                     <button onclick="updateUserInformation()" type="submit" class="btn btn-outline-light" id="changeProfileButton">Save changes</button>

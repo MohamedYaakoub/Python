@@ -4,7 +4,7 @@ eel.expose(post_job)
 function post_job(company, title, description, id) {
     $('#alert-changed-profile').removeClass("show");
     let para = document.createElement("P");                 // Create a <p> element
-    para.innerHTML = "<div class=\"card color3\" id=\"idn" + id + "\" style=\"width: 100%;\">\n" +
+    para.innerHTML = "<div class=\"card color3  mx-5\" id=\"idn" + id + "\" style=\"width: auto;\">\n" +
         "  <div class=\"card-body\">\n" +
         "    <h5 class=\"card-title\"  >" + company + "</h5>\n" +
         "    <h6 class=\"card-subtitle mb-2 \" >" + title + "</h6>\n" +
@@ -21,7 +21,7 @@ eel.expose(post_active_job)
 function post_active_job(company, title, description, id) {
     $('#alert-changed-profile').removeClass("show");
     let para = document.createElement("P");                 // Create a <p> element
-    para.innerHTML = "<div class=\"card color3\" id=\"idn" + id + "\" style=\"width: 100%;\">\n" +
+    para.innerHTML = "<div class=\"card color3 mx-5\" id=\"idn" + id + "\" style=\"width: auto;\">\n" +
         "  <div class=\"card-body\">\n" +
         "    <h5 class=\"card-title\"  >" + company + "</h5>\n" +
         "    <h6 class=\"card-subtitle mb-2 \" >" + title + "</h6>\n" +
@@ -37,7 +37,7 @@ eel.expose(post_accepted_job)
 function post_accepted_job(company, title, description, id) {
     $('#alert-changed-profile').removeClass("show");
     let para = document.createElement("P");                 // Create a <p> element
-    para.innerHTML = "<div class=\"card color3\" id=\"idn" + id + "\" style=\"width: 100%;\">\n" +
+    para.innerHTML = "<div class=\"card color3 mx-5\" id=\"idn" + id + "\" style=\"width: auto;\">\n" +
         "  <div class=\"card-body\">\n" +
         "    <h5 class=\"card-title\"  >" + company + "</h5>\n" +
         "    <h6 class=\"card-subtitle mb-2 \" >" + title + "</h6>\n" +
@@ -54,7 +54,7 @@ eel.expose(post_old_jobs)
 function post_old_jobs(company, title, description, id) {
     $('#alert-changed-profile').removeClass("show");
     let para = document.createElement("P");                 // Create a <p> element
-    para.innerHTML = "<div class=\"card color3\" id=\"idn" + id + "\" style=\"width: 100%;\">\n" +
+    para.innerHTML = "<div class=\"card color3 mx-5\" id=\"idn" + id + "\" style=\"width: auto;\">\n" +
         "  <div class=\"card-body\">\n" +
         "    <h5 class=\"card-title\"  >" + company + "</h5>\n" +
         "    <h6 class=\"card-subtitle mb-2 \" >" + title + "</h6>\n" +
