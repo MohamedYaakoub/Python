@@ -4,6 +4,9 @@ from oauth2client.service_account import ServiceAccountCredentials
 import gspread
 import ntplib
 import pandas as pd
+from datetime import datetime
+import pytz
+
 # YAAKOUB
 import numpy as np
 
@@ -85,6 +88,15 @@ class Request:
         response = ntp_client.request('pool.ntp.org')  # Time zone
         return ctime(response.tx_time)
 
+
+    #Yaakoub
+    @staticmethod
+    def get_time1():
+
+        tz_Ams = pytz.timezone('Europe/Amsterdam')
+        datetime_London = datetime.now(tz_Ams)
+        return datetime_London.strftime("%Y-%m-%d %H:%M:%S %Z%z")
+
     def accept(self):
         self.status = 'Accepted'
 
@@ -120,13 +132,19 @@ class User:
 
 
 # YAAKOUB
-def get_userinfo():
-    user_database = Database("client_secret_1.json", "User Database")
-    alldata = np.array(user_database.sheet.get_all_values())                        #was not able to slice ROW from list so I used numpy
-    #return user_database.sheet.col_values(2), user_database.sheet.col_values(7)
-    return alldata[1:,0], alldata[1:,1], alldata[1:,6] , alldata[1:,5], alldata[1:,8], user_database        #leave "user_database" in its position
-                                                                                                            #I use -1 index to import it,
-                                                                                                            #if you want to add to the list add before "user database"
+# def get_userinfo():
+#     user_database = Database("client_secret_1.json", "User Database")
+#     alldata = np.array(user_database.sheet.get_all_values())                        #was not able to slice ROW from list so I used numpy
+#     #return user_database.sheet.col_values(2), user_database.sheet.col_values(7)
+#     return alldata[1:,0], alldata[1:,1], alldata[1:,6] , alldata[1:,5], alldata[1:,8], user_database        #leave "user_database" in its position
+#                                                                                                             #I use -1 index to import it,
+#                                                                                                             #if you want to add to the list add before "user database"
 
+def find(self,**selection):
+    found = self                                         # REQUEST
+    for colname, value in selection.items():
+        found = found[found[str(colname)] == str(value)]
+    idx = found.index + 2
+    return idx, found
 # Testing
 # if __name__ == '__main__':
