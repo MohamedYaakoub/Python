@@ -22,17 +22,17 @@ def login():
                 print("you are in!!")
                 print("your user id is " + ids[index])
 
-                #TODO: familirize the system with other information of the user
-                #current_user =  #class
+                att = userinfo[-1].find(Name=username)[1]
+                currentuser = att.iloc[0]
+
+                for element in list(att):
+                    currentuser.element = currentuser[element]          #Here you can import all attributes such as Hyree ID, email, password
 
                 onlinelog = threading.Thread(target=online_log, args=(userinfo[-1],index), daemon=True)
                 onlinelog.start()
 
-
-                print("mee")
-                time.sleep(8)
-                #online_log(userinfo[-1],index)
-
+                print("weeeeeeeeeeeeeeeeee")
+                time.sleep(20)
 
             else:
                 print("Incorrect Password")     #user should try again
@@ -51,7 +51,7 @@ def login():
                     input(str("Data of birth ""dd/mm/yyyy"": ")),           #give error if wrong format provided
                     input(str("Location (where you currently live): ")),
                     input(str("Job Prefrences: ")),                         #should be a drop down menu
-                    input(str(email)),
+                    input(email),
                     input(str("Password: ")))
         user.user_id = "Hy - " + str(user.user_id)
         user.add_user()
@@ -69,4 +69,9 @@ def online_log(userinfo,index):
 login()
 
 #TODO: add function that allwos for editing
+#
+# user_database = Database("client_secret_1.json", "User Database")
+# currentuser = user_database.find(Name = "beka")
+# x = currentuser[1].iloc[0]
 
+#print(list(currentuser[1]))
