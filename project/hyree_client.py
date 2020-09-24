@@ -1,46 +1,43 @@
-from project.backend import Database,Request,User, get_userinfo
+from project.backend import Database,Request,User,find
 import time
 import threading
 
 def login():
 
     where = input(str("login or new user? "))   #implement in the UI
+    database = Database("client_secret_1.json", "User Database")
+    user_database = database.get_all()
+    #usernames = user_database["Name"].tolist()
+    passwords = user_database["Password"].tolist()
+    emails = user_database["Email"].tolist()
 
     if where == "login":
-        username = input(str("username: "))
+        email = input(str("email: "))
         pw = input(str("password: "))
 
-        userinfo = get_userinfo()               #gurantees similar pull
+        if email in emails:
+            index = emails.index(email)
 
-        ids = userinfo[0].tolist()
-        usernames = userinfo[1].tolist()         #Should login with Email!!
-        passwords = userinfo[2].tolist()         #find better method?
-
-        if username in usernames:
-            index = usernames.index(username)
             if pw in passwords[index]:
                 print("you are in!!")
-                print("your user id is " + ids[index])
+                current_user = find(user_database,Email=email)[1].iloc[0]       #Here you can import all attributes such as Hyree ID, email, password
+                print("your user id is " + current_user["Hyree ID"])
 
-                att = userinfo[-1].find(Name=username)[1]
-                currentuser = att.iloc[0]
 
-                for element in list(att):
-                    currentuser.element = currentuser[element]          #Here you can import all attributes such as Hyree ID, email, password
-
-                onlinelog = threading.Thread(target=online_log, args=(userinfo[-1],index), daemon=True)
+                onlinelog = threading.Thread(target=online_log, args=(database,index), daemon=True)
                 onlinelog.start()
 
                 print("weeeeeeeeeeeeeeeeee")
-                time.sleep(20)
+                time.sleep(100)
 
             else:
                 print("Incorrect Password")     #user should try again
+
         else:
             print("Non existing username")      #user should try again
 
     elif where == "new user":
-        emails = get_userinfo()[4].tolist()             #check with earlier better method
+        #emails = get_userinfo()[4].tolist()             #check with earlier better method
         email = input(str("Email: "))
 
         while email in emails:
@@ -62,16 +59,19 @@ def login():
 def online_log(userinfo,index):
     userinfo.add_cell(index+2, 8, "Online")
     while True:       #True essentially means that the user is online
-        userinfo.add_cell(index+2, 9, Request.get_time())
-        time.sleep(15)
+        userinfo.add_cell(index+2, 9, Request.get_time1())
+        time.sleep(2)
+
 
 #online_log()
-login()
+#login()
 
 #TODO: add function that allwos for editing
-#
-# user_database = Database("client_secret_1.json", "User Database")
-# currentuser = user_database.find(Name = "beka")
-# x = currentuser[1].iloc[0]
+
+
+
+
+
+
 
 #print(list(currentuser[1]))
