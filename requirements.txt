@@ -4,3 +4,7 @@ coverage
 pytest-cov
 decorators
 mock
+gspread
+oauth2client
+ntplib
+pandas
