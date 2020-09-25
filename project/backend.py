@@ -62,6 +62,10 @@ class Database:
     def add_cell(self, row, col, msg):
         self.sheet.update_cell(row, col, msg)
 
+    def update_cells(self,range,values):
+        self.sheet.update(range,values)
+
+
 
 class Request:
     def __init__(self, request_details):
