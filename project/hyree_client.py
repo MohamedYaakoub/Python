@@ -2,28 +2,38 @@ from project.backend import Database,Request,User,find
 import time
 import threading
 
+
+
+database = Database("client_secret_1.json", "User Database")
+# df = database.get_all()
+
 def login_acc(email, password, df):
     try:
-        user = find(df, Email=email)[1].iloc[0]
-        if user["Password"] == password:
+        current_user = find(df, Email=email)[1].iloc[0]         #fix find
+        # print(current_user)
+        if current_user["Password"] == password:
             print("you are in!!")
-            current_user = find(df, Email=email)[1].iloc[0]  # Here you can import all attributes such as Hyree ID, email, password
-            print("your user id is " + current_user["Hyree ID"])
-            return current_user
-    except:
-        print("Non existing email")
-        pass
+                                                    # Here you can import all attributes such as Hyree ID, email, password
+            index = find(df,Email = email)[0][0]
+            print("your user id is " + str(current_user["Hyree ID"]))
+            return current_user, index
+    except IndexError:
+        return False, print("Non existing email")
     return False, print("Incorrect Password")
-#login_acc("yoyo","amen",Database("client_secret_1.json", "User Database").get_all())
 
-def online_log(userinfo,index):
-    userinfo.add_cell(index+2, 8, "Online")
-    while True:       #True essentially means that the user is online
-        userinfo.add_cell(index+2, 9, Request.get_time1())
+
+# print(login_acc("meow","amen",Database("client_secret_1.json", "User Database").get_all()))
+
+
+def online_log(database,index):
+    database.add_cell(index, 8, "Online")
+    while True:                                             #True essentially means that the user is online
+        database.add_cell(index, 9, Request.get_time1())
         time.sleep(2)
 
+
 # onlinelog = threading.Thread(target=online_log, args=(database,index), daemon=True)
-# onlinelog.start()                                                                         #These should be implemented
+# onlinelog.start()
 
 
 def email_in_use(email, df):        ##New user##    #True if the email is not in use
@@ -49,31 +59,21 @@ def newuser(name, email, D_O_B, Location, Prefrence, Password, df):
     user.add_user()
     print("User successfully added.")
 
-def edit_user(user, name, email, D_O_B, Location, Prefrence, Password):
+
+def edit_user(user, database, name, D_O_B, Location, Prefrence, Password):
+    email = user["Email"]
     user["Name"] = name
-    user["Email"] = email
-    user["Password"] = D_O_B
-    user["Name"] = Location
-    user["Email"] = Prefrence
+    user["Date of birth"] = D_O_B
+    user["Location"] = Location
+    user["Preferences"] = Prefrence
     user["Password"] = Password
-    #update name email password
 
-def login():
+    df = database.get_all()                     #refresh to make sure you are on the lastest version
+    id = find(df,Email = email)[0][0]           #get id to communicate correctly with the data sheet
 
-    # where = input(str("login or new user? "))   #implement in the UI
-    # database = Database("client_secret_1.json", "User Database")
-    # user_database = database.get_all()
-
-
-#online_log()
-#login()
-
-#TODO: add function that allwos for editing
+    database.sheet.update("A" + str(id) +":G" + str(id), [user[0:7].tolist()])
+    return "user successfully added!"
 
 
-
-
-
-
-
-#print(list(currentuser[1]))
+# x = login_acc("meow","amen",Database("client_secret_1.json", "User Database").get_all())[0]
+# edit_user(x, database, "ahmad", "20/12/6000", "singapore", "gardener", "amen")
