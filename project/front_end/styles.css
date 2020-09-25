@@ -1,0 +1,296 @@
+/* Creates box around join us options*/
+
+.homeRegister:hover {
+    cursor: pointer;
+    background: #facb2c;
+    color: black;
+    border-radius: 8px;
+}
+
+
+/* Underline Hyree or Hyrer in the join us area */
+.homeRegister:hover .Homeunderline {
+    text-decoration: underline;
+    background: #facb2c;
+    color: black;
+}
+
+/* Center align the h2 tags of join us options */
+.homeRegister h2 {
+    text-align: center;
+}
+
+.ProfileName {
+    text-align: center;
+}
+
+.ProfileBtn {
+    font-weight: bold;
+}
+
+.ProfileBtn:hover {
+    background: #facb2c;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#info-icon {
+    background-image: url("images/icon-info-w.svg");
+    height: 52px;
+    width: 52px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.ProfileBtn:hover #info-icon {
+    background-image: url("images/icon-info.svg");
+}
+
+
+#accepted-icon {
+    background-image: url("images/icon-accept-w.svg");
+    height: 52px;
+    width: 52px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.ProfileBtn:hover #accepted-icon {
+    background-image: url("images/icon-accept.svg");
+}
+
+
+#job-icon {
+    background-image: url("images/icon-job-w.svg");
+    height: 52px;
+    width: 52px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.ProfileBtn:hover #job-icon {
+    background-image: url("images/icon-job.svg");
+}
+
+#rejected-icon {
+    background-image: url("images/icon-reject-w.svg");
+    height: 52px;
+    width: 52px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.ProfileBtn:hover #rejected-icon {
+    background-image: url("images/icon-reject.svg");
+}
+
+
+
+.check-item label {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+
+.check-item label:hover, input:hover {
+    cursor: pointer;
+}
+
+.check-item input:checked ~ label .check-checkbox{
+    background-image: url("images/check.svg");
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    right: 30px;
+    top:17%;
+}
+
+.check-item input:checked ~ label {
+    background: #facb2c;
+    color: black;
+
+}
+
+.tooltip-inner {
+    text-align: left;
+}
+
+
+.infoIconPreferences {
+    background-image: url("images/icon-sm-info-w.svg");
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 35%;
+}
+
+.check-item input:checked ~ label .infoIconPreferences {
+    background-image: url("images/icon-sm-info.svg");
+}
+
+
+
+/* Make all white outline button turn yellow when hovered */
+button.btn-outline-light:hover {
+    background: #facb2c;
+        color: black;
+}
+
+
+/*Yellow marker animation + Transition of text color*/
+
+.underlineArea .underlineTitle {
+
+    background: linear-gradient(to right, black, black 50%, white 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position .5s ease;
+
+}
+
+.underlineArea:hover .underlineTitle {
+    background-position: 0 100%;
+}
+
+.underlineArea .underBackground {
+    /*line-height: 100%;*/
+    background-image: linear-gradient(to right, #facb2c 0, #facb2c 100%);
+    background-position: 0 0;
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    transition: background .5s;
+
+}
+
+.underlineArea:hover .underBackground {
+    background-size: 100% 100%;
+    background-position: 0 0;
+    color: black;
+}
+
+
+/*HYRE Logo color and animation*/
+
+.HyreLogo {
+    color: #facb2c;
+    font-size: 28px;
+    transition: all .2s ease-in-out;
+}
+
+.HyreLogo:hover {
+    transform: scale(1.1);
+}
+
+
+/*Seme background colors used in the app*/
+
+.color1 {
+    background: #2F2FA2;
+    color: white;
+}
+
+
+.color3 {
+    background: #242582;
+    color: #ffffff;
+}
+
+.color4 {
+    background: #facb2c;
+}
+
+.registerTab {
+    overflow:hidden;
+    margin-top: 30px;
+    border: none;
+    background-color: #2F2FA2;
+}
+
+.registerTab button {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    /*transition: 0.3s;*/
+    width: 50%;
+}
+
+.registerTab button:hover {
+    background-color: #242582;
+}
+
+.registerTab button.active {
+    /*color: #000000;*/
+    /*background-color: #facb2c;*/
+    background-color: #242582;
+    color: white;
+}
+
+.registerTabContent {
+
+    /*background-color: #facb2c;*/
+    /*color: black;*/
+    background-color: #242582;
+    color: white;
+}
+
+.registerTabContent label{
+    font-size: 24px;
+    margin-bottom: 4px;
+
+}
+
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.topright:hover {
+    color: #ff0000;
+}
+
+.tabHeader {
+    color: #FFFFFF;
+}
+
+
+#choose-preferences-title {
+    text-align: center;
+}
+
+#location-text {
+    text-align: center;
+}
+
+#getLocationButton {
+    position: relative;
+}
+
+#getLocation {
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+}
+
+.newjobFormTitle {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+

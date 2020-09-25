@@ -8,3 +8,6 @@ gspread
 oauth2client
 ntplib
 pandas
+eel
+numpy
+

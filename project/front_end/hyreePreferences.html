@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HYRE</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+
+</head>
+
+<body class="color1" onload="tooltips()">
+<div class="container mt-1">
+    <nav class="navbar navbar-expand navbar-dark  pl-0">
+        <a class="HyreLogo navbar-brand " href="hyreeDashboard.html" style="color: #facb2c"><img src="images/yellowgrad2.png" style="height: 20px; margin-left: auto;margin-right: auto;display: block"></a>
+
+        <div class="collapse navbar-collapse ml-2" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item underlineArea mb-1 ">
+                <span class="underBackground"><span class="underlineTitle"><a class=" nav-item "
+                                                                              href="hyreeProfile.html">Back to Profile</a>
+                </span></span>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item underlineArea mb-1">
+                <span class="underBackground"><span class="underlineTitle"><a class="nav-item " onclick="eel.log_out()"
+                                                                              href="home.html">Log out</a>
+                </span></span>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container pt-5">
+    <div class="row mx-5">
+        <h1>Job preferences</h1>
+    </div>
+</div>
+
+<!--Values need to be added to all checkboxes -->
+<div class="container mt-5 ">
+    <form>
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-sm-6 ">
+                <div class="check-item">
+                    <input type="checkbox" value="cleaning" id="defaultCheck1" style="display:none">
+                    <label class="color3" for="defaultCheck1">
+                        <div class="check-checkbox"></div>
+                        <div class="infoIconPreferences" data-html="true" data-toggle="tooltip" data-placement="left"
+                             title="<p>Includes: <ul><li> A consectetur </li> <li>corporis, culpa ea </li></ul>enim eveniet incidunt ipsa iusto laborum laudantium, molestias nesciu</p>"></div>
+                        <div class="ml-4">Cleaning</div>
+
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-sm-6 mt-1">
+                <div class="check-item">
+                    <input type="checkbox" value="" id="defaultCheck2" checked="checked" style="display:none">
+                    <label class="color3" for="defaultCheck2">
+                        <div class="check-checkbox"></div>
+                        <div class="infoIconPreferences" data-html="true" data-toggle="tooltip" data-placement="left"
+                             title="<p>Includes: <ul><li> A consectetur </li> <li>corporis, culpa ea </li></ul>enim eveniet incidunt ipsa iusto laborum laudantium, molestias nesciu</p>"></div>
+                        <div class="ml-4">Programming</div>
+
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="check-area col-12 col-sm-6 mt-1">
+                <div class="check-item">
+                    <input type="checkbox" value="" id="defaultCheck3" style="display:none">
+                    <label class="color3" for="defaultCheck3">
+                        <div class="check-checkbox"></div>
+                        <div class="infoIconPreferences" data-html="true" data-toggle="tooltip" data-placement="left"
+                             title="<p>Includes: <ul><li> A consectetur </li> <li>corporis, culpa ea </li></ul>enim eveniet incidunt ipsa iusto laborum laudantium, molestias nesciu</p>"></div>
+                        <div class="ml-4">Fixing</div>
+
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-sm-6 mt-1">
+                <div class="check-item">
+                    <input type="checkbox" value="" id="defaultCheck4" style="display:none" checked="checked">
+
+                    <label class="color3" for="defaultCheck4">
+                        <div class="check-checkbox"></div>
+                        <div class="infoIconPreferences" data-html="true" data-toggle="tooltip" data-placement="left"
+                             title="<p>Includes: <ul><li> A consectetur </li> <li>corporis, culpa ea </li></ul>enim eveniet incidunt ipsa iusto laborum laudantium, molestias nesciu</p>"></div>
+                        <div class="ml-4">Painting</div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row d-flex justify-content-center mt-4">
+            <div class="col-12 col-sm-6">
+                <button type="submit" class="btn btn-outline-light" id="homeLogin">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
