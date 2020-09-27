@@ -1,9 +1,16 @@
+from project.backend import Database,Request,User,find
+import time
 import eel
 
 @eel.expose
 def log_out():
     pass
 
+def login_acc(email, password, df):
+    current_user = df[df['Email'] == email.lower()]
+    if (current_user["Password"] == password).any():
+        return True
+    return False
 
 @eel.expose
 def log_in(email, password):
@@ -20,13 +27,14 @@ def log_in(email, password):
         None
 
         """
-    if (email.lower() == "ui@hyre.com") and (password == '123'):
-        eel.accept_hyree()
-    elif (email.lower() == "ui2@hyre.com") and (password == '123'):
-        eel.accept_hyrer()
-    else:
-        eel.error_pop_up("You have entered an invalid username or password!")
-    # eel.login_accepted()
+    user_type = "Hyree" # This should be turned into an argument
+    if user_type == 'Hyree':
+        user_database = Database("client_secret_1.json", "User Database").get_all()
+        if login_acc(email, password, user_database):
+            eel.accept_hyree()
+            return True
+    return False
+
 
 @eel.expose
 def hyree_register(first_name, last_name, email, password1, password2):

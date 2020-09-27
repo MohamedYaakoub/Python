@@ -6,7 +6,6 @@ function login() {
 
 
 eel.expose(register_hyree)
-
 function register_hyree() {
     firstName = document.getElementById('RegisterFirstName').value;
     lastName = document.getElementById('RegisterLastName').value;
@@ -133,7 +132,6 @@ function accept_hyree() {
 }
 
 eel.expose(accept_hyrer);
-
 function accept_hyrer() {
     window.location.replace('/hyrerDashboard.html');
 }
