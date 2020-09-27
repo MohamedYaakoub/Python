@@ -33,6 +33,8 @@ def log_in(email, password):
         if login_acc(email, password, user_database):
             eel.accept_hyree()
             return True
+        else:
+            eel.error_pop_up("You have entered an invalid username or password!")
     return False
 
 
