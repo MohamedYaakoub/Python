@@ -1,4 +1,4 @@
-from project.backend import Database
+from project.backend import Database, Request
 import time
 import eel
 
@@ -9,8 +9,15 @@ def log_out():
 def login_acc(email, password, df):
     current_user = df[df['Email'] == email.lower()]
     if (current_user["Password"] == password).any():
-        return True
+        return current_user.index[0] + 2
     return False
+
+def online_log(database,index):
+    database.add_cell(index, 8, "Online")
+    """ The while is still as a comment, because we still don't have a way of making it run in the bg"""
+    # while True:
+    #     database.add_cell(index, 9, Request.get_time1())
+    #     time.sleep(2)
 
 @eel.expose
 def log_in(email, password):
@@ -29,8 +36,9 @@ def log_in(email, password):
         """
     user_type = "Hyree" # This should be turned into an argument
     if user_type == 'Hyree':
-        user_database = Database("client_secret_1.json", "User Database").get_all()
-        if login_acc(email, password, user_database):
+        user_database = Database("client_secret_1.json", "User Database")
+        if idx := login_acc(email, password, user_database.get_all()):
+            online_log(user_database,idx)
             eel.accept_hyree()
             return True
         else:
@@ -73,7 +81,8 @@ def save_position(longitude, latitude):
     #eel.location_rejected()
 
 def main():
-    pass
+    user_database = Database("client_secret_1.json", "User Database").get_all()
+    print(login_acc('user@hyre.com', 'lucas', user_database))
 
 
 if __name__ == "__main__":
