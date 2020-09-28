@@ -7,6 +7,16 @@ def log_out():
     pass
 
 def login_acc(email, password, df):
+    """ Returns row of an user if log in is accepted
+
+
+    :param email: User input email
+    :param password: User input  password
+    :param df: DataFrame of the Users Database
+
+    :return: row of user accepted
+    :rtype: int
+    """
     current_user = df[df['Email'] == email.lower()]
     if (current_user["Password"] == password).any():
         return current_user.index[0] + 2
@@ -27,18 +37,18 @@ def log_in(email, password):
         approved, python indicates to the JS function login_accepted() that the login was accepted.
 
         Args:
-        email(str):  User email
-        password(str): User password
+            email(str):  User email
+            password(str): User password
 
         Returns:
-        None
+            None
 
         """
     user_type = "Hyree" # This should be turned into an argument
     if user_type == 'Hyree':
         user_database = Database("client_secret_1.json", "User Database")
-        if idx := login_acc(email, password, user_database.get_all()):
-            online_log(user_database,idx)
+        if row := login_acc(email, password, user_database.get_all()):
+            online_log(user_database,row)
             eel.accept_hyree()
             return True
         else:
