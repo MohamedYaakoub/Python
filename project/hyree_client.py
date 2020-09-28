@@ -4,7 +4,7 @@ import threading
 
 
 
-database = Database("client_secret_1.json", "User Database")
+# database = Database("client_secret_1.json", "User Database")
 # df = database.get_all()
 
 def login_acc(email, password, df):

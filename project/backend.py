@@ -112,7 +112,7 @@ class Request:
 
 
 class User:
-    user_database = Database("client_secret_1.json", "User Database")
+    # user_database = Database("client_secret_1.json", "User Database")
 
     def __init__(self, name, birthdate, location, preferences, password, email):
         self.user_id = randint(10000, 99999)
