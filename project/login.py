@@ -19,8 +19,8 @@ def login_acc(email, password, df):
     """
     current_user = df[df['Email'] == email.lower()]
     if (current_user["Password"] == password).any():
-        return current_user.index[0] + 2
-    return False
+        return int(current_user.index[0] + 2), current_user['Hyree ID'].iloc[0]
+    return False, False
 
 def online_log(database,index):
     database.add_cell(index, 8, "Online")
@@ -47,9 +47,11 @@ def log_in(email, password):
     user_type = "Hyree" # This should be turned into an argument
     if user_type == 'Hyree':
         user_database = Database("client_secret_1.json", "User Database")
-        if row := login_acc(email, password, user_database.get_all()):
+        row, id = login_acc(email, password, user_database.get_all())
+        if row:
             online_log(user_database,row)
-            eel.accept_hyree()
+            eel.accept_hyree(row,id)
+            print(eel.user_row_id()())
             return True
         else:
             eel.error_pop_up("You have entered an invalid username or password!")

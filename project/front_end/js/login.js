@@ -127,7 +127,9 @@ function showPosition(position) {
 
 
 eel.expose(accept_hyree);
-function accept_hyree() {
+function accept_hyree(row, id) {
+    sessionStorage.setItem('row', row);
+    sessionStorage.setItem('id', id);
     window.location.replace('/hyreeDashboard.html');
 }
 
@@ -135,6 +137,16 @@ eel.expose(accept_hyrer);
 function accept_hyrer() {
     window.location.replace('/hyrerDashboard.html');
 }
+
+eel.expose(user_row_id);
+function user_row_id(){
+  var row = sessionStorage.getItem("row");
+  var id  = sessionStorage.getItem("id");
+  // eel.get_from_js(row, id)
+    return [row,id]
+}
+
+
 
 function openTab(evt, tabName) {
     console.log(tabName);
