@@ -12,7 +12,7 @@ eel
 numpy
 threaded
 pytz
-oauth2client.service_account
+oauth2client
 time
 random
 datetime
