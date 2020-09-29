@@ -10,7 +10,7 @@ ntplib
 pandas
 eel
 numpy
-threading
+threaded
 pytz
 oauth2client.service_account
 time
