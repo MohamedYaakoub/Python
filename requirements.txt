@@ -13,7 +13,6 @@ numpy
 threaded
 pytz
 oauth2client
-time
 random
 datetime
 
